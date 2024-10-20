@@ -41,6 +41,7 @@ class DecomNet(nn.Module):
             # Recall tensor shape: (batch size, channels, height, width)
         R = torch.sigmoid(c3[:, 0:3, :, :]) # Only the 3 first channels
         I = torch.sigmoid(c3[:, 3:4, :, :]) # Only the last channel
+
         return R, I
 
 
@@ -76,21 +77,112 @@ class EnhanceNet(nn.Module):
         extracted_features.append(up3)
 
         # Concat the features
+        concat_features = torch.cat(extracted_features, dim=1)
 
+        # Fuse the features using 1x1 kernel
+        fused_features = self.conv1x1(concat_features)
 
+        # Generate the illumination map (use sigmoid)
+        I_enhanced = torch.sigmoid(self.illumination_map(fused_features))
 
+        return I_enhanced
 
 
 class RetinexNet(nn.Module):
-    pass
+    def __init__(self):
+        super(RetinexNet, self).__init__()
+
+        self.decom_net = DecomNet()
+        self.enhance_net = EnhanceNet()
+    
+    def forward(self, input_low, input_high):
+        # Convert the input to tensors (with float)
+        input_low = torch.from_numpy(input_low).float().cuda()
+        input_high = torch.from_numpy(input_high).float().cuda()
+
+
+        # Get the Reflectance and Illumination map in both low and high images
+        R_low, I_low = self.decom_net(input_low) 
+        R_high, I_high = self.decom_net(input_high)
+
+        # Enhance illumination component for low-images
+        I_low_enhanced = self.enhance_net(I_low)
+
+        # Concat illuminations (make it have 3 channels instead of 1 to match with Reflectance)
+        I_low_concat = torch.cat((I_low, I_low, I_low), dim=1)
+        I_high_concat = torch.cat((I_high, I_high, I_high), dim=1)
+        I_low_enhanced_concat = torch.cat((I_low_enhanced, I_low_enhanced, I_low_enhanced), dim=1)
+
+        # Reconstruction loss
+        self.recon_low = F.l1_loss(R_low * I_low_concat, input_low)
+        self.recon_high = F.l1_loss(R_high * I_high_concat, input_high)
+
+        # Mutual reconstruction loss (ensures consistent reflectance and illuminance)
+        self.recon_mutual_low = F.l1_loss(R_high * I_low_concat, input_low)
+        self.recon_mutual_high = F.l1_loss(R_low * I_high_concat, input_high)
+
+        # Invariable reflectance loss
+        self.invariable_reflectance_loss = F.l1_loss(R_low, R_high)
+
+        # Adjustment loss
+        self.adjustment_loss = F.l1_loss(R_low * I_low_enhanced_concat, input_high)
+
+
+        # Smoothness loss
+            # Note: We need to compute gradients (horizontal and vertical) for Illumination and Reflectance Map
+        self.smooth_loss_low = self.smoothness_loss(I_low, R_low)
+        self.smooth_loss_high = self.smoothness_loss(I_high, R_high)
+        self.smooth_loss_enhanced = self.smoothness_loss(I_low_enhanced, I_low_enhanced_concat)
+
+        # Decom net loss: L = L_reconstruction + lambda_ir * L_invariable_reflectance_loss + lambda_is * L_is
+        self.decom_loss =   (self.recon_low + self.recon_high) + \
+                            (0.001 * self.recon_mutual_low + 0.001 * self.recon_mutual_high) + \
+                            (0.1 * self.smooth_loss_low + 0.1 * self.smooth_loss_high) + \
+                            (0.01 * self.invariable_reflectance_loss)
+        
+        # Enhance net loss: L_recon + L_is
+        self.enhance_loss = (self.adjustment_loss + self.smooth_loss_enhanced)
+
+            
+    def compute_gradient(self, img):
+        grad_x = torch.abs(img[:, :, :-1, :] - img[:, :, 1:, :])
+        grad_y = torch.abs(img[:, :, :, :-1] - img[:, :, :, 1:])
+        return grad_x, grad_y
+    
+    def smoothness_loss(self, I, R, lambda_g=10):
+        grad_I_x, grad_I_y = self.compute_gradient(I)
+        grad_R_x, grad_R_y = self.compute_gradient(R)
+
+        exp_term_x = torch.exp(-lambda_g * grad_R_x)
+        exp_term_y = torch.exp(-lambda_g * grad_R_y)
+
+        smooth_x = torch.mean(torch.abs(grad_I_x * exp_term_x))
+        smooth_y = torch.mean(torch.abs(grad_I_y * exp_term_y))
+
+        smooth_loss = smooth_x + smooth_y
+
+        return smooth_loss
+
 
 
 def main():
     # Random tensor for testing
-    input_tensor = torch.rand(1, 4, 128, 128)
+    input_tensor_low = torch.rand(1, 4, 128, 128)
+    input_tensor_high = torch.rand(1, 4, 128, 128)
 
-    decom = DecomNet()
-    R, I = decom.forward(input_tensor)
+    retinex_model = RetinexNet().cuda()  # Make sure to move the model to GPU if available
+
+    # Test forward pass
+    R_low, I_low = retinex_model.decom_net(input_tensor_low)
+    R_high, I_high = retinex_model.decom_net(input_tensor_high)
+    I_enhanced = retinex_model.enhance_net(I_low)
+
+    print(f"Reflectance low shape: {R_low.shape}, Illumination low shape: {I_low.shape}")
+    print(f"Reflectance high shape: {R_high.shape}, Illumination high shape: {I_high.shape}")
+    print(f"Enhanced Illumination shape: {I_enhanced.shape}")
+
+if __name__ == '__main__':
+    main()
 
 
 if __name__ == '__main__':
