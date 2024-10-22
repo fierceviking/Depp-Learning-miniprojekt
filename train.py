@@ -47,6 +47,7 @@ def train(model, device, train_loader, optimizer, scheduler, epoch):
             wandb.log({"Train loss": loss.item()})
             wandb.log({"Decom loss": decom_loss.item(), "Enhance loss": enhance_loss.item()})
 
+
 def validate(model, device, vali_loader):
     model.eval()
     val_loss = 0
@@ -75,6 +76,9 @@ def validate(model, device, vali_loader):
         avg_val_loss = val_loss / len(vali_loader)
         print(f"\nAverage validation loss: {avg_val_loss}")
         wandb.log({"Average validation loss": avg_val_loss})
+
+        # Add PSNR and SSIM
+
         return avg_val_loss
 
 
