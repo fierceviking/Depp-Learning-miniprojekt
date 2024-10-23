@@ -25,11 +25,11 @@ def main():
 
     # Move validation images to new folder
     for img in val_high:
-        shutil.move(os.path.join(train_high_names, img), os.path.join(validation_high_folder, img))
+        shutil.move(os.path.join('train_data/high', img), os.path.join(validation_high_folder, img))
 
 
     for img in val_high:
-        shutil.move(os.path.join(train_low_names, img), os.path.join(validation_low_folder, img))
+        shutil.move(os.path.join('train_data/low', img), os.path.join(validation_low_folder, img))
 
 
 if __name__ == '__main__':
