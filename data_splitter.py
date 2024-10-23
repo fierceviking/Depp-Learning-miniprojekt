@@ -28,7 +28,7 @@ def main():
         shutil.move(os.path.join('train_data/high', img), os.path.join(validation_high_folder, img))
 
 
-    for img in val_high:
+    for img in val_low:
         shutil.move(os.path.join('train_data/low', img), os.path.join(validation_low_folder, img))
 
 
