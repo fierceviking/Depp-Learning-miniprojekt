@@ -51,3 +51,10 @@ Placeholder for old lines of code
         self.enhance_loss = (self.adjustment_loss + self.smooth_loss_enhanced)
 
         return self.decom_loss, self.enhance_loss """
+
+import os
+train_high_names = os.listdir('train_data/high')
+print("Length of train data: ", len(train_high_names))
+
+val_high_names = os.listdir('vali_data/high')
+print("Length of validation data: ", len(val_high_names))
