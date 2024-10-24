@@ -57,9 +57,6 @@ class DecomNet(nn.Module):
         return input_img
 
 
-
-
-
 class EnhanceNet(nn.Module):
     def __init__(self, channels=64, kernel_size=3):
         super(EnhanceNet, self).__init__()
@@ -124,7 +121,6 @@ class EnhanceNet(nn.Module):
         # Output
         I_enhanced = self.output(x)
         return I_enhanced
-
 
 
 class RetinexNet(nn.Module):

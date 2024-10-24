@@ -54,7 +54,7 @@ def validate(model, device, vali_loader):
 
     # Skip calculating gradients
     with torch.no_grad():
-        for batch, (low_light, high_light) in enumerate(vali_loader):
+        for batch_idx, (low_light, high_light) in enumerate(vali_loader):
             low_light, high_light = low_light.to(device), high_light.to(device)
             
             # Forward pass: Decomposing and enhancing the low-light image
@@ -82,10 +82,15 @@ def validate(model, device, vali_loader):
         return avg_val_loss
 
 
-
 def main():
     torch.manual_seed(42)
 
+
+
+if __name__ == '__main__':
+    main()
+
+"""
     R_high = torch.rand(1, 3, 128, 128)
     I_high = torch.rand(1, 1, 128, 128)
     input_high = torch.rand(1, 3, 128, 128)
@@ -101,6 +106,5 @@ def main():
     enhance = compute_enhance_loss(input_high, R_low, I_low, enhanced_image)
     print(f"Enhance loss: {enhance}")
 
-if __name__ == '__main__':
-    main()
+"""
 
