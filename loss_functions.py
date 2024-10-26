@@ -24,13 +24,13 @@ def ave_gradient(input_tensor, direction):
     # Apply average pooling (equivalent to TensorFlow's average_pooling2d)
     return F.avg_pool2d(gradient_output, kernel_size=3, stride=1, padding=1)
 
-def smooth(input_I, input_R):
+def smooth(I, R):
     # Convert input_R to grayscale by taking the mean across the color channels
-    input_R_gray = torch.mean(input_R, dim=1, keepdim=True)
+    input_R_gray = torch.mean(R, dim=1, keepdim=True)
     
     # Calculate gradients for input_I and input_R_gray in both x and y directions
-    grad_I_x = gradient(input_I, "x")
-    grad_I_y = gradient(input_I, "y")
+    grad_I_x = gradient(I, "x")
+    grad_I_y = gradient(I, "y")
     ave_grad_R_x = ave_gradient(input_R_gray, "x")
     ave_grad_R_y = ave_gradient(input_R_gray, "y")
     
