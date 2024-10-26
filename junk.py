@@ -52,6 +52,27 @@ Placeholder for old lines of code
 
         return self.decom_loss, self.enhance_loss """
 
+
+"""
+    R_high = torch.rand(1, 3, 128, 128)
+    I_high = torch.rand(1, 1, 128, 128)
+    input_high = torch.rand(1, 3, 128, 128)
+
+    R_low = torch.rand(1, 3, 128, 128)
+    I_low = torch.rand(1, 1, 128, 128)
+    input_low = torch.rand(1, 3, 128, 128)
+    enhanced_image = torch.rand(1, 3, 128, 128)
+
+    decom = compute_decom_loss(input_low, input_high, R_low, I_low, R_high, I_high)
+    print(f"Reconstruction high: {decom}")
+
+    enhance = compute_enhance_loss(input_high, R_low, I_low, enhanced_image)
+    print(f"Enhance loss: {enhance}")
+
+"""
+
+
+
 import os
 train_high_names = os.listdir('train_data/high')
 print("Length of train data: ", len(train_high_names))

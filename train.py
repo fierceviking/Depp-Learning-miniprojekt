@@ -2,7 +2,11 @@ import torch
 from model import RetinexNet
 from loss_functions import compute_enhance_loss, compute_decom_loss
 import torch.nn.functional as F
-
+from torchvision import transforms
+from data_loader import LOLDataset
+from torch.utils.data import DataLoader
+import torch.optim as optim
+from torch.optim.lr_scheduler import StepLR
 
 import wandb
 
@@ -30,7 +34,6 @@ def train(model, device, train_loader, optimizer, scheduler, epoch):
                                         R_low, I_low, 
                                         R_high, I_high)
         enhance_loss = compute_enhance_loss(high_light, R_low, I_low_enhanced, enhanced_image)
-
         loss = decom_loss + enhance_loss
 
         # Compute gradients with backpropagation
@@ -39,10 +42,9 @@ def train(model, device, train_loader, optimizer, scheduler, epoch):
         # Update model weights
         optimizer.step()
 
-        if scheduler:
-            scheduler.step()
+        scheduler.step()
 
-        if batch_idx % 100:
+        if batch_idx % 100 == 0:
             print(f"Train Epoch: {epoch}, Iteration: {batch_idx}, Train Loss: {loss.item()}")
             wandb.log({"Train loss": loss.item()})
             wandb.log({"Decom loss": decom_loss.item(), "Enhance loss": enhance_loss.item()})
@@ -71,7 +73,7 @@ def validate(model, device, vali_loader):
             enhance_loss = compute_enhance_loss(high_light, R_low, I_low_enhanced, enhanced_image)
 
             loss = decom_loss + enhance_loss
-            val_loss += loss
+            val_loss += loss.item()
         
         avg_val_loss = val_loss / len(vali_loader)
         print(f"\nAverage validation loss: {avg_val_loss}")
@@ -85,26 +87,59 @@ def validate(model, device, vali_loader):
 def main():
     torch.manual_seed(42)
 
+    num_epochs = 100
+    batch_size = 16
+    learning_rate = 1e-3
 
+    # Set compute environment
+    if torch.cuda.is_available():
+        device = torch.device("cuda")
+    else:
+        device = torch.device("cpu")
+
+    # Start new wandb run
+    wandb.login()
+    wandb.init(project="DL_miniproject")
+
+    transform = transforms.Compose([
+        transforms.Resize((256, 256)),  # Resize to the same size
+        transforms.ToTensor(),          # Convert to PyTorch tensor
+        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))  # Normalize with mean and std deviation
+    ])
+
+    # Define training and validation set
+    train_low_dir = 'train_data/low'
+    train_high_dir = 'train_data/high'
+    vali_low_dir = 'vali_data/low'
+    vali_high_dir = 'vali_data/high'
+
+    train_data = LOLDataset(train_low_dir, train_high_dir, transform=transform)
+    vali_data = LOLDataset(vali_low_dir, vali_high_dir, transform=transform)
+    
+    train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True, num_workers=2)
+    vali_loader = DataLoader(vali_data, batch_size=batch_size, shuffle=False)
+
+    # Define model
+    model = RetinexNet().to(device)
+
+    # Define optimizers
+    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    scheduler = StepLR(optimizer, step_size=10, gamma=0.5)
+
+    # Train and test
+    for epoch in range(0, num_epochs):
+        current_lr = scheduler.get_last_lr()[0]
+        print(f"Learning rate: {current_lr}")
+        train(model, device, train_loader, optimizer, scheduler, epoch)
+        validate(model, device, vali_loader)
+        wandb.log({'Epoch': epoch})
+        wandb.log({'Learning_rate': current_lr})
+        scheduler.step()
+
+        # Save model per 20 epoch
+        if epoch % 20 == 0:
+            torch.save(model.state_dict(), f"RetinexNet_epoch{epoch}")
 
 if __name__ == '__main__':
     main()
-
-"""
-    R_high = torch.rand(1, 3, 128, 128)
-    I_high = torch.rand(1, 1, 128, 128)
-    input_high = torch.rand(1, 3, 128, 128)
-
-    R_low = torch.rand(1, 3, 128, 128)
-    I_low = torch.rand(1, 1, 128, 128)
-    input_low = torch.rand(1, 3, 128, 128)
-    enhanced_image = torch.rand(1, 3, 128, 128)
-
-    decom = compute_decom_loss(input_low, input_high, R_low, I_low, R_high, I_high)
-    print(f"Reconstruction high: {decom}")
-
-    enhance = compute_enhance_loss(input_high, R_low, I_low, enhanced_image)
-    print(f"Enhance loss: {enhance}")
-
-"""
 
