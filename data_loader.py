@@ -3,14 +3,16 @@ from PIL import Image
 import torch
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
+import random
 
 class LOLDataset(Dataset):
-    def __init__(self, low_dir, high_dir, transform=None):
+    def __init__(self, low_dir, high_dir, transform=None, patch_size=(96,96)):
         self.low_dir = low_dir
         self.high_dir = high_dir
         self.low_images = sorted(os.listdir(low_dir))
         self.high_images = sorted(os.listdir(high_dir))
         self.transform = transform
+        self.patch_size = patch_size
 
     def __len__(self):
         return len(self.low_images)
@@ -21,6 +23,14 @@ class LOLDataset(Dataset):
 
         low_image = Image.open(low_path)
         high_image = Image.open(high_path)
+
+
+        # Randomly select a patch from the iamage
+        if low_image.size[0] > self.patch_size[0] and low_image.size[1] > self.patch_size[1]:
+            x = random.randint(0, low_image.size[0] - self.patch_size[0])
+            y = random.randint(0, low_image.size[1] - self.patch_size[1])
+            low_image = low_image.crop((x, y, x + self.patch_size[0], y + self.patch_size[1]))
+            high_image = high_image.crop((x, y, x + self.patch_size[0], y + self.patch_size[1]))
 
         if self.transform:
             low_image = self.transform(low_image)

@@ -13,7 +13,7 @@ import wandb
 
 
 
-def train(model, device, train_loader, optimizer, scheduler, epoch):
+def train(model, device, train_loader, optimizer, epoch):
     # Enable model training mode
     model.train()
 
@@ -84,7 +84,7 @@ def validate(model, device, vali_loader):
 def main():
     torch.manual_seed(42)
     # Create directory if it doesn't exist
-    os.makedirs("models/job_1", exist_ok=True)
+    os.makedirs("models/job_2", exist_ok=True)
 
     num_epochs = 100
     batch_size = 16
@@ -111,9 +111,10 @@ def main():
     train_high_dir = 'train_data/high'
     vali_low_dir = 'vali_data/low'
     vali_high_dir = 'vali_data/high'
+    patch_size = (96,96)
 
-    train_data = LOLDataset(train_low_dir, train_high_dir, transform=transform)
-    vali_data = LOLDataset(vali_low_dir, vali_high_dir, transform=transform)
+    train_data = LOLDataset(train_low_dir, train_high_dir, transform=transform, patch_size=patch_size)
+    vali_data = LOLDataset(vali_low_dir, vali_high_dir, transform=transform, patch_size=patch_size)
     
     train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True, num_workers=2)
     vali_loader = DataLoader(vali_data, batch_size=batch_size, shuffle=False)
@@ -122,14 +123,14 @@ def main():
     model = RetinexNet().to(device)
 
     # Define optimizers
-    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-    scheduler = StepLR(optimizer, step_size=10, gamma=0.5)
+    optimizer = optim.SGD(model.parameters(), lr=learning_rate, momentum=0.8, weight_decay=0.0001)
+    scheduler = StepLR(optimizer, step_size=30, gamma=0.5)
 
     # Train and test
-    for epoch in range(0, num_epochs):
+    for epoch in range(0, num_epochs+1):
         current_lr = scheduler.get_last_lr()[0]
         print(f"Learning rate: {current_lr}")
-        train(model, device, train_loader, optimizer, scheduler, epoch)
+        train(model, device, train_loader, optimizer, epoch)
         validate(model, device, vali_loader)
 
         wandb.log({'Epoch': epoch})
@@ -138,7 +139,7 @@ def main():
 
         # Save model per 20 epoch
         if epoch % 20 == 0:
-            torch.save(model.state_dict(), f"models/job_1/RetinexNet_epoch{epoch}.pt")
+            torch.save(model.state_dict(), f"models/job_2/RetinexNet_epoch{epoch}.pt")
 
 if __name__ == '__main__':
     main()
