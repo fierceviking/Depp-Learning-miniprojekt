@@ -121,7 +121,7 @@ def validate(model, device, vali_loader, stage='both'):
 
             elif stage == 'enhance':
                 # Forward pass: Decomposing and enhancing the low-light image
-                enhanced_image, R_low, I_low, I_low_enhanced = model(low_light)
+                R_low, I_low, I_low_enhanced = model(low_light)
 
                 # Decompose the high-light image as well (for comparison)
                 R_high, I_high = model.decom_net(high_light)
@@ -198,7 +198,7 @@ def main():
     vali_loader = DataLoader(vali_data, batch_size=batch_size, shuffle=False)
 
     # Stage 1: Train DecomNet
-    model = RetinexNet(train_decom_only=True).to(device)
+    model = RetinexNet(train_decom_only=True, train_enhance_only=False).to(device)
 
     # Define optimizers and schedulers
     optimizer_decom = optim.Adam(model.decom_net.parameters(), lr=learning_rate)
@@ -242,7 +242,7 @@ def main():
             torch.save(model.enhance_net.state_dict(), f'models/EnhanceNet/EnhanceNet_trained_2_{epoch}.pt')
 
     # Stage 3: Fine-tuning
-    model = RetinexNet().to(device)
+    model = RetinexNet(train_decom_only=False, train_enhance_only=False).to(device)
     model.decom_net.load_state_dict(torch.load(f'models/DecomNet/DecomNet_trained_2_{num_epochs}.pt')) 
     model.enhance_net.load_state_dict(torch.load(f'models/EnhanceNet/EnhanceNet_trained_2_{num_epochs}.pt'))
 
