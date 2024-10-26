@@ -1,33 +1,31 @@
 import torch
 from model import RetinexNet
-from torchvision import transforms
-from PIL import Image
+import cv2
+import numpy as np
 
 def load_image(image_path):
-    # Transformation
-    transform = transforms.Compose([
-    transforms.Resize((256, 256)),  # Resize to the same size
-    transforms.ToTensor(),          # Convert to PyTorch tensor
-    transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))  # Normalize with mean and std deviation
-    ])
+    # Load the image using OpenCV
+    image = cv2.imread(image_path)
+    if image is None:
+        raise ValueError(f"Image not found or unable to load: {image_path}")
 
-    # Load the image
-    image = Image.open(image_path)
-    image = transform(image).unsqueeze(0)
-
-    return image
-
+    # Resize and normalize the image
+    image = cv2.resize(image, (256, 256))  # Resize to the required size
+    image = image.astype(np.float32) / 255.0  # Convert to float and normalize to [0, 1]
+    image = (image - 0.5) / 0.5  # Normalize with mean and std deviation
+    image = np.transpose(image, (2, 0, 1))  # Change to CHW format
+    return torch.tensor(image).unsqueeze(0)  # Add batch dimension
 
 def main():
-    if torch.cuda_is_available():
-        device = torch.device("cuda")
-    else:
-        device = torch.device("cpu")
+    # Set device
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Load model
     path = "models/job_1/RetinexNet_epoch80.pt"
     model = RetinexNet().to(device)
-    model.load_state_dict(torch.load(path))
+
+    # Load the model state_dict with map_location
+    model.load_state_dict(torch.load(path, map_location=device))
     model.eval()
 
     # Load image
@@ -36,11 +34,18 @@ def main():
 
     # Run inference
     with torch.no_grad():
-        enhanced_image, reflectance, illumination, enhanced_illumination = RetinexNet(image)
+        enhanced_image, reflectance, illumination, enhanced_illumination = model(image)
 
-    # Save and Display image
-    enhanced_image = enhanced_image.squeeze(0)
-    enhanced_image = transforms.ToPILImage()(enhanced_image)
+    # Save and display image using OpenCV
+    enhanced_image = enhanced_image.squeeze(0).permute(1, 2, 0)  # Change dimensions to HxWxC
+    enhanced_image = (enhanced_image.cpu().numpy() * 255).astype('uint8')  # Convert to uint8 format
 
-    enhanced_image.save("enhanced_image1.png")
-    enhanced_image.show()
+    # Save the enhanced image
+    cv2.imwrite("enhanced_image1.png", cv2.cvtColor(enhanced_image, cv2.COLOR_RGB2BGR))
+    # Display the enhanced image
+    cv2.imshow("Enhanced Image", enhanced_image)
+    cv2.waitKey(0)  # Wait for a key press to close the window
+    cv2.destroyAllWindows()
+
+if __name__ == '__main__':
+    main()
