@@ -130,7 +130,7 @@ def main():
         current_lr = scheduler.get_last_lr()[0]
         print(f"Learning rate: {current_lr}")
         train(model, device, train_loader, optimizer, scheduler, epoch)
-        val_loss = validate(model, device, vali_loader)
+        validate(model, device, vali_loader)
 
         wandb.log({'Epoch': epoch})
         wandb.log({'Learning_rate': current_lr})
