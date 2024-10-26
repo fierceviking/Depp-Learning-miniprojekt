@@ -14,6 +14,11 @@ class LOLDataset(Dataset):
         self.transform = transform
         self.patch_size = patch_size
 
+        assert len(self.low_images) == len(self.high_images), "Number of low and high images must match."
+
+        for low_image, high_image in zip(self.low_images, self.high_images):
+            assert low_image == high_image, f"Filename mismatch: {low_image} and {high_image} do not match."
+
     def __len__(self):
         return len(self.low_images)
     
