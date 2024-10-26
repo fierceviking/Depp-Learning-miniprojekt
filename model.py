@@ -124,46 +124,24 @@ class EnhanceNet(nn.Module):
 
 
 class RetinexNet(nn.Module):
-    def __init__(self):
+    def __init__(self, train_decom_only=False, train_enhance_only=False):
         super(RetinexNet, self).__init__()
 
         self.decom_net = DecomNet()
         self.enhance_net = EnhanceNet()
+        self.train_decom_only = train_decom_only
+        self.train_enhance_only = train_enhance_only
     
 
     def forward(self, x):
         reflectance, illumination = self.decom_net(x)
         enhanced_illumination = self.enhance_net(reflectance, illumination)
+
+        if self.train_decom_only:
+            return reflectance, illumination    
+        
+        if self.train_enhance_only:
+            return reflectance, illumination, enhanced_illumination
+        
         enhanced_image = reflectance * enhanced_illumination
         return enhanced_image, reflectance, illumination, enhanced_illumination
-
-
-
-# def main():
-#     # Random tensor for testing
-#     input_tensor_low = torch.rand(1, 3, 128, 128)
-#     input_tensor_high = torch.rand(1, 3, 128, 128)
-
-#     decom = DecomNet()
-#     R_low, I_low = decom.forward(input_tensor_low)
-#     R_high, I_high = decom.forward(input_tensor_high)
-
-#     enhance = EnhanceNet()
-#     I_enhanced = enhance.forward(R_low, I_low)
-
-#     print(f"Reflectance low shape: {R_low.shape}, Illumination low shape: {I_low.shape}")
-#     print(f"Reflectance high shape: {R_high.shape}, Illumination high shape: {I_high.shape}")
-#     print(f"Enhanced Illumination shape: {I_enhanced.shape}")
-
-#     # Create the retinex model
-#     retinex = RetinexNet()
-#     input_low = torch.rand(1, 3, 128, 128)
-#     input_high = torch.rand(1, 3, 128, 128)
-    
-#     enhanced_image, reflectance, illumination, enhanced_illumination = retinex(input_low)
-#     print(enhanced_image.shape)
-    
-
-
-# if __name__ == '__main__':
-#     main()

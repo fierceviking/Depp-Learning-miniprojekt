@@ -13,7 +13,41 @@ import wandb
 
 
 
-def train(model, device, train_loader, optimizer, epoch):
+def train_decom_net(model, device, train_loader, optimizer, epoch):
+    # Enable model training mode
+    model.train()
+
+    for batch_idx, (low_light, high_light) in enumerate(train_loader):
+        low_light, high_light = low_light.to(device), high_light.to(device)
+
+        # Zero out gradients
+        optimizer.zero_grad()
+
+        # Forward pass: Decomposing the images
+        R_low, I_low = model(low_light)
+        R_high, I_high = model(high_light)
+
+
+        # Compute loss
+        decom_loss = compute_decom_loss(low_light, high_light, 
+                                        R_low, I_low, 
+                                        R_high, I_high)
+
+        # Backpropagation + weight update
+        decom_loss.backward()
+        optimizer.step()
+
+        if batch_idx % 100 == 0:
+            print(f"Train Epoch: {epoch}, Iteration: {batch_idx}, Decomposition loss: {decom_loss.item()}")
+            wandb.log({"Decom loss": decom_loss.item()})
+
+
+def train_enhance_net(model, device, train_loader, optimizer, epoch):
+    # Freeze DecomNet parameters
+    for param in model.decom_net.parameters():
+        param.requires_grad = False
+    
+
     # Enable model training mode
     model.train()
 
@@ -24,34 +58,50 @@ def train(model, device, train_loader, optimizer, epoch):
         optimizer.zero_grad()
 
         # Forward pass: Decomposing and enhancing the low-light image
-        enhanced_image, R_low, I_low, I_low_enhanced = model(low_light)
+        R_low, I_low, I_low_enhanced = model(low_light)
 
-        # Decompose the high-light image as well (for comparison)
+        enhance_loss = compute_enhance_loss(high_light, R_low, I_low_enhanced)
+
+        # Backpropagation + weight update
+        enhance_loss.backward()
+        optimizer.step()
+
+
+        if batch_idx % 100 == 0:
+            print(f"Train Epoch: {epoch}, Iteration: {batch_idx}, Enhance Loss: {enhance_loss.item()}")
+            wandb.log({"Enhance loss": enhance_loss.item()})
+
+def fine_tune(model, device, train_loader, optimizer, epoch):   
+    # Enable model training mode
+    model.train()
+
+    for batch_idx, (low_light, high_light) in enumerate(train_loader):
+        low_light, high_light = low_light.to(device), high_light.to(device)
+
+        # Zero out gradients
+        optimizer.zero_grad()
+
+    
+        # Forward pass: Decomposing and enhancing the low-light image
+        enhanced_image, R_low, I_low, I_low_enhanced = model(low_light)
         R_high, I_high = model.decom_net(high_light)
 
-
-        # Compute losses
+        enhance_loss = compute_enhance_loss(high_light, R_low, I_low_enhanced)
         decom_loss = compute_decom_loss(low_light, high_light, 
                                         R_low, I_low, 
                                         R_high, I_high)
-        enhance_loss = compute_enhance_loss(high_light, R_low, I_low_enhanced, enhanced_image)
         loss = decom_loss + enhance_loss
 
-        # Compute gradients with backpropagation
+        # Backpropagation + weight update
         loss.backward()
-
-        # Update model weights
         optimizer.step()
 
-        #scheduler.step()
 
         if batch_idx % 100 == 0:
             print(f"Train Epoch: {epoch}, Iteration: {batch_idx}, Train Loss: {loss.item()}")
             wandb.log({"Train loss": loss.item()})
-            wandb.log({"Decom loss": decom_loss.item(), "Enhance loss": enhance_loss.item()})
 
-
-def validate(model, device, vali_loader):
+def validate(model, device, vali_loader, stage='both'):
     model.eval()
     val_loss = 0
 
@@ -60,21 +110,39 @@ def validate(model, device, vali_loader):
         for batch_idx, (low_light, high_light) in enumerate(vali_loader):
             low_light, high_light = low_light.to(device), high_light.to(device)
             
-            # Forward pass: Decomposing and enhancing the low-light image
-            enhanced_image, R_low, I_low, I_low_enhanced = model(low_light)
+            if stage == 'decom':
+                # Forward pass: Only Decomposing the low-light image
+                R_low, I_low = model.decom_net(low_light)
+                R_high, I_high = model.decom_net(high_light)
 
-            # Decompose the high-light image as well (for comparison)
-            R_high, I_high = model.decom_net(high_light)
+                # Compute losses
+                decom_loss = compute_decom_loss(low_light, high_light, R_low, I_low, R_high, I_high)
+                val_loss += decom_loss.item()
 
+            elif stage == 'enhance':
+                # Forward pass: Decomposing and enhancing the low-light image
+                enhanced_image, R_low, I_low, I_low_enhanced = model(low_light)
 
-            # Compute losses
-            decom_loss = compute_decom_loss(low_light, high_light, 
-                                            R_low, I_low, 
-                                            R_high, I_high)
-            enhance_loss = compute_enhance_loss(high_light, R_low, I_low_enhanced, enhanced_image)
+                # Decompose the high-light image as well (for comparison)
+                R_high, I_high = model.decom_net(high_light)
 
-            loss = decom_loss + enhance_loss
-            val_loss += loss.item()
+                # Compute enhance loss
+                enhance_loss = compute_enhance_loss(high_light, R_low, I_low_enhanced)
+                val_loss += enhance_loss.item()
+
+            elif stage == 'both':
+                # Forward pass: Decomposing and enhancing the low-light image
+                enhanced_image, R_low, I_low, I_low_enhanced = model(low_light)
+
+                # Decompose the high-light image as well (for comparison)
+                R_high, I_high = model.decom_net(high_light)
+
+                # Compute both losses
+                decom_loss = compute_decom_loss(low_light, high_light, R_low, I_low, R_high, I_high)
+                enhance_loss = compute_enhance_loss(high_light, R_low, I_low_enhanced)
+
+                loss = decom_loss + enhance_loss
+                val_loss += loss.item()
         
         avg_val_loss = val_loss / len(vali_loader)
         print(f"\nAverage validation loss: {avg_val_loss}")
@@ -84,9 +152,11 @@ def validate(model, device, vali_loader):
 def main():
     torch.manual_seed(42)
     # Create directory if it doesn't exist
-    os.makedirs("models/job_2", exist_ok=True)
+    os.makedirs("models/DecomNet", exist_ok=True)
+    os.makedirs("models/EnhanceNet", exist_ok=True)
+    os.makedirs("models/FineTuning", exist_ok=True)
 
-    num_epochs = 100
+    num_epochs = 50
     batch_size = 16
     learning_rate = 1e-3
 
@@ -119,27 +189,68 @@ def main():
     train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True, num_workers=2)
     vali_loader = DataLoader(vali_data, batch_size=batch_size, shuffle=False)
 
-    # Define model
-    model = RetinexNet().to(device)
+    # Define optimizers and schedulers
+    optimizer_decom = optim.Adam(model.decom_net.parameters(), lr=learning_rate)
+    optimizer_enhance = optim.Adam(model.enhance_net.parameters(), lr=learning_rate)
+    optimizer_both = optim.SGD(model.parameters(), lr=learning_rate, momentum=0.8, weight_decay=0.0001)
 
-    # Define optimizers
-    optimizer = optim.SGD(model.parameters(), lr=learning_rate, momentum=0.8, weight_decay=0.0001)
-    scheduler = StepLR(optimizer, step_size=30, gamma=0.5)
+    scheduler_decom = StepLR(optimizer_decom, step_size=10, gamma=0.5)
+    scheduler_enhance = StepLR(optimizer_enhance, step_size=10, gamma=0.5)
+    scheduler_both = StepLR(optimizer_both, step_size=10, gamma=0.5)
 
-    # Train and test
-    for epoch in range(0, num_epochs+1):
-        current_lr = scheduler.get_last_lr()[0]
+    # Stage 1: Train DecomNet
+    model = RetinexNet(train_decom_only=True).to(device)
+
+    for epoch in range(num_epochs+1):
+        current_lr = scheduler_decom.get_last_lr()[0]
         print(f"Learning rate: {current_lr}")
-        train(model, device, train_loader, optimizer, epoch)
-        validate(model, device, vali_loader)
-
+        train_decom_net(model, device, train_loader, optimizer_decom, epoch)
+        validate(model, device, vali_loader, stage='decom')
         wandb.log({'Epoch': epoch})
         wandb.log({'Learning_rate': current_lr})
-        scheduler.step()
+        scheduler_decom.step()
 
-        # Save model per 20 epoch
-        if epoch % 20 == 0:
-            torch.save(model.state_dict(), f"models/job_2/RetinexNet_epoch{epoch}.pt")
+        if epoch % 10 == 0:
+            # Save DecomNet's parameters
+            torch.save(model.decom_net.state_dict(), f'models/DecomNet/DecomNet_trained_1_{epoch}.pt')
+
+
+    # Stage 2: Train EnhanceNet
+    # Load DecomNet's parameters
+    model = RetinexNet(train_enhance_only=True).to(device)
+    model.decom_net.load_state_dict(torch.load(f'models/DecomNet_trained_1_{num_epochs}.pt')) 
+
+    for epoch in range(num_epochs+1):
+        current_lr = scheduler_enhance.get_last_lr()[0]
+        print(f"Learning rate: {current_lr}")
+        train_enhance_net(model, device, train_loader, optimizer_enhance, epoch)
+        validate(model, device, vali_loader, stage='enhance')
+        wandb.log({'Epoch': epoch})
+        wandb.log({'Learning_rate': current_lr})
+        scheduler_enhance.step()
+
+        if epoch % 10 == 0:
+            # Save EnhanceNet's parameters
+            torch.save(model.enhance_net.state_dict(), f'models/EnhanceNet/EnhanceNet_trained_1_{epoch}.pt')
+
+    # Stage 3: Fine-tuning
+    model = RetinexNet().to(device)
+    model.decom_net.load_state_dict(torch.load(f'models/DecomNet_trained_1_{num_epochs}.pt')) 
+    model.enhance_net.load_state_dict(torch.load(f'models/EnhanceNet/EnhanceNet_trained_1_{num_epochs}.pt'))
+
+    for epoch in range(num_epochs+1):
+        current_lr = scheduler_enhance.get_last_lr()[0]
+        print(f"Learning rate: {current_lr}")
+        train_enhance_net(model, device, train_loader, optimizer_both, epoch)
+        validate(model, device, vali_loader, stage='both')
+        wandb.log({'Epoch': epoch})
+        wandb.log({'Learning_rate': current_lr})
+        scheduler_both.step()
+
+        if epoch % 10 == 0:
+            # Save EnhanceNet's parameters
+            torch.save(model.state_dict(), f'models/FineTuning/FineTuning_1_{epoch}.pt')
+
 
 if __name__ == '__main__':
     main()

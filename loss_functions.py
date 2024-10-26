@@ -45,10 +45,9 @@ def compute_decom_loss(low_light, high_light, R_low, I_low, R_high, I_high):
 
     return decom_loss
 
-def compute_enhance_loss(high_light, R_low, I_low_enhanced, enhanced_image):
-    reconstuction_loss_enhanced = F.l1_loss(enhanced_image, high_light)
+def compute_enhance_loss(high_light, R_low, I_low_enhanced):
     reconstuction_loss = F.l1_loss(R_low * I_low_enhanced, high_light)
     smooth_loss_enhanced = smoothness_loss(R=R_low, I=I_low_enhanced)
 
-    enhance_loss = reconstuction_loss + reconstuction_loss_enhanced + smooth_loss_enhanced
+    enhance_loss = reconstuction_loss + 3 * smooth_loss_enhanced
     return enhance_loss
