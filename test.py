@@ -25,7 +25,7 @@ def main():
         device = torch.device("cpu")
 
     # Load model
-    path = "models/job_1/RetinexNet_epoch100.pt"
+    path = "models/job_1/RetinexNet_epoch80.pt"
     model = RetinexNet().to(device)
     model.load_state_dict(torch.load(path))
     model.eval()
@@ -39,7 +39,7 @@ def main():
         enhanced_image, reflectance, illumination, enhanced_illumination = RetinexNet(image)
 
     # Save and Display image
-    enhanced_image = enhanced_image.squeeze(0).cpu()
+    enhanced_image = enhanced_image.squeeze(0)
     enhanced_image = transforms.ToPILImage()(enhanced_image)
 
     enhanced_image.save("enhanced_image1.png")
