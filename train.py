@@ -158,7 +158,7 @@ def main():
 
     num_epochs = 100
     batch_size = 16
-    learning_rate = 1e-3
+    learning_rate = 1e-4
 
     # Set compute environment
     if torch.cuda.is_available():
@@ -205,59 +205,59 @@ def main():
     optimizer_enhance = optim.Adam(model.enhance_net.parameters(), lr=learning_rate)
     optimizer_both = optim.SGD(model.parameters(), lr=learning_rate, momentum=0.8, weight_decay=0.0001)
 
-    # scheduler_decom = StepLR(optimizer_decom, step_size=10, gamma=0.5)
-    # scheduler_enhance = StepLR(optimizer_enhance, step_size=10, gamma=0.5)
-    # scheduler_both = StepLR(optimizer_both, step_size=10, gamma=0.5)
+    scheduler_decom = StepLR(optimizer_decom, step_size=20, gamma=0.5)
+    scheduler_enhance = StepLR(optimizer_enhance, step_size=20, gamma=0.5)
+    scheduler_both = StepLR(optimizer_both, step_size=20, gamma=0.5)
 
     for epoch in range(num_epochs+1):
-        # current_lr = scheduler_decom.get_last_lr()[0]
-        # print(f"Learning rate: {current_lr}")
+        current_lr = scheduler_decom.get_last_lr()[0]
+        print(f"Learning rate: {current_lr}")
         train_decom_net(model, device, train_loader, optimizer_decom, epoch)
         validate(model, device, vali_loader, stage='decom')
         wandb.log({'Epoch': epoch})
-        # wandb.log({'Learning_rate': current_lr})
-        # scheduler_decom.step()
+        wandb.log({'Learning_rate': current_lr})
+        scheduler_decom.step()
 
         if epoch % 10 == 0:
             # Save DecomNet's parameters
-            torch.save(model.decom_net.state_dict(), f'models/DecomNet/DecomNet_trained_2_{epoch}.pt')
+            torch.save(model.decom_net.state_dict(), f'models/DecomNet/DecomNet_trained_4_{epoch}.pt')
 
 
     # Stage 2: Train EnhanceNet
     # Load DecomNet's parameters
     model = RetinexNet(train_decom_only=False, train_enhance_only=True).to(device)
-    model.decom_net.load_state_dict(torch.load(f'models/DecomNet/DecomNet_trained_2_{num_epochs}.pt')) 
+    model.decom_net.load_state_dict(torch.load(f'models/DecomNet/DecomNet_trained_4_{num_epochs}.pt')) 
 
     for epoch in range(num_epochs+1):
-        # current_lr = scheduler_enhance.get_last_lr()[0]
-        # print(f"Learning rate: {current_lr}")
+        current_lr = scheduler_enhance.get_last_lr()[0]
+        print(f"Learning rate: {current_lr}")
         train_enhance_net(model, device, train_loader, optimizer_enhance, epoch)
         validate(model, device, vali_loader, stage='enhance')
         wandb.log({'Epoch': epoch})
-        # wandb.log({'Learning_rate': current_lr})
-        # scheduler_enhance.step()
+        wandb.log({'Learning_rate': current_lr})
+        scheduler_enhance.step()
 
         if epoch % 10 == 0:
             # Save EnhanceNet's parameters
-            torch.save(model.enhance_net.state_dict(), f'models/EnhanceNet/EnhanceNet_trained_2_{epoch}.pt')
+            torch.save(model.enhance_net.state_dict(), f'models/EnhanceNet/EnhanceNet_trained_4_{epoch}.pt')
 
     # Stage 3: Fine-tuning
     model = RetinexNet(train_decom_only=False, train_enhance_only=False).to(device)
-    model.decom_net.load_state_dict(torch.load(f'models/DecomNet/DecomNet_trained_2_{num_epochs}.pt')) 
-    model.enhance_net.load_state_dict(torch.load(f'models/EnhanceNet/EnhanceNet_trained_2_{num_epochs}.pt'))
+    model.decom_net.load_state_dict(torch.load(f'models/DecomNet/DecomNet_trained_4_{num_epochs}.pt')) 
+    model.enhance_net.load_state_dict(torch.load(f'models/EnhanceNet/EnhanceNet_trained_4_{num_epochs}.pt'))
 
     for epoch in range(num_epochs+1):
-        # current_lr = scheduler_enhance.get_last_lr()[0]
-        # print(f"Learning rate: {current_lr}")
+        current_lr = scheduler_enhance.get_last_lr()[0]
+        print(f"Learning rate: {current_lr}")
         fine_tune(model, device, train_loader, optimizer_both, epoch)
         validate(model, device, vali_loader, stage='both')
         wandb.log({'Epoch': epoch})
-        # wandb.log({'Learning_rate': current_lr})
-        # scheduler_both.step()
+        wandb.log({'Learning_rate': current_lr})
+        scheduler_both.step()
 
         if epoch % 10 == 0:
             # Save EnhanceNet's parameters
-            torch.save(model.state_dict(), f'models/FineTuning/FineTuning_2_{epoch}.pt')
+            torch.save(model.state_dict(), f'models/FineTuning/FineTuning_4_{epoch}.pt')
 
 
 if __name__ == '__main__':
