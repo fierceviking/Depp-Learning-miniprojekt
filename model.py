@@ -135,13 +135,16 @@ class RetinexNet(nn.Module):
 
     def forward(self, x):
         reflectance, illumination = self.decom_net(x)
-        enhanced_illumination = self.enhance_net(reflectance, illumination)
-
-        if self.train_decom_only:
-            return reflectance, illumination    
-        
+        # If training only the enhancement network
         if self.train_enhance_only:
+            enhanced_illumination = self.enhance_net(reflectance, illumination)
             return reflectance, illumination, enhanced_illumination
+
+        # If training only the decomposition network
+        if self.train_decom_only:
+            return reflectance, illumination
         
+        # Default case: both networks are active
+        enhanced_illumination = self.enhance_net(reflectance, illumination)
         enhanced_image = reflectance * enhanced_illumination
         return enhanced_image, reflectance, illumination, enhanced_illumination
