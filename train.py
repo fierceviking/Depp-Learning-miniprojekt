@@ -220,13 +220,13 @@ def main():
 
         if epoch % 10 == 0:
             # Save DecomNet's parameters
-            torch.save(model.decom_net.state_dict(), f'models/DecomNet/DecomNet_trained_4_{epoch}.pt')
+            torch.save(model.decom_net.state_dict(), f'models/DecomNet/DecomNet_trained_5_{epoch}.pt')
 
 
     # Stage 2: Train EnhanceNet
     # Load DecomNet's parameters
     model = RetinexNet(train_decom_only=False, train_enhance_only=True).to(device)
-    model.decom_net.load_state_dict(torch.load(f'models/DecomNet/DecomNet_trained_4_{num_epochs}.pt')) 
+    model.decom_net.load_state_dict(torch.load(f'models/DecomNet/DecomNet_trained_5_{num_epochs}.pt')) 
 
     for epoch in range(num_epochs+1):
         current_lr = scheduler_enhance.get_last_lr()[0]
@@ -239,12 +239,12 @@ def main():
 
         if epoch % 10 == 0:
             # Save EnhanceNet's parameters
-            torch.save(model.enhance_net.state_dict(), f'models/EnhanceNet/EnhanceNet_trained_4_{epoch}.pt')
+            torch.save(model.enhance_net.state_dict(), f'models/EnhanceNet/EnhanceNet_trained_5_{epoch}.pt')
 
     # Stage 3: Fine-tuning
     model = RetinexNet(train_decom_only=False, train_enhance_only=False).to(device)
-    model.decom_net.load_state_dict(torch.load(f'models/DecomNet/DecomNet_trained_4_{num_epochs}.pt')) 
-    model.enhance_net.load_state_dict(torch.load(f'models/EnhanceNet/EnhanceNet_trained_4_{num_epochs}.pt'))
+    model.decom_net.load_state_dict(torch.load(f'models/DecomNet/DecomNet_trained_5_{num_epochs}.pt')) 
+    model.enhance_net.load_state_dict(torch.load(f'models/EnhanceNet/EnhanceNet_trained_5_{num_epochs}.pt'))
 
     for epoch in range(num_epochs+1):
         current_lr = scheduler_enhance.get_last_lr()[0]
@@ -257,7 +257,7 @@ def main():
 
         if epoch % 10 == 0:
             # Save EnhanceNet's parameters
-            torch.save(model.state_dict(), f'models/FineTuning/FineTuning_4_{epoch}.pt')
+            torch.save(model.state_dict(), f'models/FineTuning/FineTuning_5_{epoch}.pt')
 
 
 if __name__ == '__main__':
