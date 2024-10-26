@@ -7,6 +7,7 @@ from data_loader import LOLDataset
 from torch.utils.data import DataLoader
 import torch.optim as optim
 from torch.optim.lr_scheduler import StepLR
+import os
 
 import wandb
 
@@ -42,7 +43,7 @@ def train(model, device, train_loader, optimizer, scheduler, epoch):
         # Update model weights
         optimizer.step()
 
-        scheduler.step()
+        #scheduler.step()
 
         if batch_idx % 100 == 0:
             print(f"Train Epoch: {epoch}, Iteration: {batch_idx}, Train Loss: {loss.item()}")
@@ -79,13 +80,11 @@ def validate(model, device, vali_loader):
         print(f"\nAverage validation loss: {avg_val_loss}")
         wandb.log({"Average validation loss": avg_val_loss})
 
-        # Add PSNR and SSIM
-
-        return avg_val_loss
-
 
 def main():
     torch.manual_seed(42)
+    # Create directory if it doesn't exist
+    os.makedirs("models/job_1", exist_ok=True)
 
     num_epochs = 100
     batch_size = 16
@@ -131,14 +130,15 @@ def main():
         current_lr = scheduler.get_last_lr()[0]
         print(f"Learning rate: {current_lr}")
         train(model, device, train_loader, optimizer, scheduler, epoch)
-        validate(model, device, vali_loader)
+        val_loss = validate(model, device, vali_loader)
+
         wandb.log({'Epoch': epoch})
         wandb.log({'Learning_rate': current_lr})
         scheduler.step()
 
         # Save model per 20 epoch
         if epoch % 20 == 0:
-            torch.save(model.state_dict(), f"RetinexNet_epoch{epoch}")
+            torch.save(model.state_dict(), f"models/job_1/RetinexNet_epoch{epoch}.pt")
 
 if __name__ == '__main__':
     main()
