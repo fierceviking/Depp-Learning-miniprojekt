@@ -8,9 +8,9 @@ smooth_kernel_y = smooth_kernel_x.permute(0, 1, 3, 2)  # Transpose for y-directi
 
 def gradient(input_tensor, direction):
     if direction == "x":
-        kernel = smooth_kernel_x
+        kernel = smooth_kernel_x.to(input_tensor.device)
     elif direction == "y":
-        kernel = smooth_kernel_y
+        kernel = smooth_kernel_y.to(input_tensor.device)
     else:
         raise ValueError("Direction must be either 'x' or 'y'")
     
