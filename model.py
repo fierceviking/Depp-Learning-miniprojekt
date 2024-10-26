@@ -8,7 +8,7 @@ class DecomNet(nn.Module):
         super(DecomNet, self).__init__()
 
         # Define 5 conv layers (based on the R-Net article) and 2 layers without reLU
-        self.de_conv_first = nn.Conv2d(4, 64, kernel_size=kernel_size, padding=padding, padding_mode='replicate') # 4 channels: R, G, B, and illumination
+        self.de_conv_first = nn.Conv2d(4, 64, kernel_size=kernel_size*3, padding=4, padding_mode='replicate') # 4 channels: R, G, B, and illumination
 
         self.de_conv_layers = nn.Sequential(
             nn.Conv2d(64, 64, kernel_size=kernel_size, padding=padding, padding_mode='replicate'),
@@ -83,7 +83,7 @@ class EnhanceNet(nn.Module):
         # Fusion (1x1 kernel) and output layers
         self.fusion = nn.Conv2d(channels*3, channels, kernel_size=1,
                                 padding=1, padding_mode='replicate')
-        self.output = nn.Conv2d(channels, 1, kernel_size=3)
+        self.output = nn.Conv2d(channels, 1, kernel_size=3, padding=0)
 
         self.relu = nn.ReLU()
 
