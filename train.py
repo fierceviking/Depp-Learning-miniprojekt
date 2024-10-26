@@ -156,7 +156,7 @@ def main():
     os.makedirs("models/EnhanceNet", exist_ok=True)
     os.makedirs("models/FineTuning", exist_ok=True)
 
-    num_epochs = 50
+    num_epochs = 100
     batch_size = 16
     learning_rate = 1e-3
 
@@ -170,10 +170,18 @@ def main():
     wandb.login()
     wandb.init(project="DL_miniproject")
 
-    transform = transforms.Compose([
+    train_transform = transforms.Compose([
         transforms.Resize((256, 256)),  # Resize to the same size
-        transforms.ToTensor(),          # Convert to PyTorch tensor
+        transforms.ToTensor(), # Convert to PyTorch tensor
+        transforms.RandomHorizontalFlip(),
+        transforms.RandomVerticalFlip(),
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))  # Normalize with mean and std deviation
+    ])
+
+    vali_transform = transforms.Compose([
+        transforms.Resize((256, 256)),
+        transforms.ToTensor(),
+        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
 
     # Define training and validation set
@@ -183,8 +191,8 @@ def main():
     vali_high_dir = 'vali_data/high'
     patch_size = (96,96)
 
-    train_data = LOLDataset(train_low_dir, train_high_dir, transform=transform, patch_size=patch_size)
-    vali_data = LOLDataset(vali_low_dir, vali_high_dir, transform=transform, patch_size=patch_size)
+    train_data = LOLDataset(train_low_dir, train_high_dir, transform=train_transform, patch_size=patch_size)
+    vali_data = LOLDataset(vali_low_dir, vali_high_dir, transform=vali_transform, patch_size=patch_size)
     
     train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True, num_workers=2)
     vali_loader = DataLoader(vali_data, batch_size=batch_size, shuffle=False)
@@ -197,59 +205,59 @@ def main():
     optimizer_enhance = optim.Adam(model.enhance_net.parameters(), lr=learning_rate)
     optimizer_both = optim.SGD(model.parameters(), lr=learning_rate, momentum=0.8, weight_decay=0.0001)
 
-    scheduler_decom = StepLR(optimizer_decom, step_size=10, gamma=0.5)
-    scheduler_enhance = StepLR(optimizer_enhance, step_size=10, gamma=0.5)
-    scheduler_both = StepLR(optimizer_both, step_size=10, gamma=0.5)
+    # scheduler_decom = StepLR(optimizer_decom, step_size=10, gamma=0.5)
+    # scheduler_enhance = StepLR(optimizer_enhance, step_size=10, gamma=0.5)
+    # scheduler_both = StepLR(optimizer_both, step_size=10, gamma=0.5)
 
     for epoch in range(num_epochs+1):
-        current_lr = scheduler_decom.get_last_lr()[0]
-        print(f"Learning rate: {current_lr}")
+        # current_lr = scheduler_decom.get_last_lr()[0]
+        # print(f"Learning rate: {current_lr}")
         train_decom_net(model, device, train_loader, optimizer_decom, epoch)
         validate(model, device, vali_loader, stage='decom')
         wandb.log({'Epoch': epoch})
-        wandb.log({'Learning_rate': current_lr})
-        scheduler_decom.step()
+        # wandb.log({'Learning_rate': current_lr})
+        # scheduler_decom.step()
 
         if epoch % 10 == 0:
             # Save DecomNet's parameters
-            torch.save(model.decom_net.state_dict(), f'models/DecomNet/DecomNet_trained_1_{epoch}.pt')
+            torch.save(model.decom_net.state_dict(), f'models/DecomNet/DecomNet_trained_2_{epoch}.pt')
 
 
     # Stage 2: Train EnhanceNet
     # Load DecomNet's parameters
     model = RetinexNet(train_decom_only=False, train_enhance_only=True).to(device)
-    model.decom_net.load_state_dict(torch.load(f'models/DecomNet/DecomNet_trained_1_{num_epochs}.pt')) 
+    model.decom_net.load_state_dict(torch.load(f'models/DecomNet/DecomNet_trained_2_{num_epochs}.pt')) 
 
     for epoch in range(num_epochs+1):
-        current_lr = scheduler_enhance.get_last_lr()[0]
-        print(f"Learning rate: {current_lr}")
+        # current_lr = scheduler_enhance.get_last_lr()[0]
+        # print(f"Learning rate: {current_lr}")
         train_enhance_net(model, device, train_loader, optimizer_enhance, epoch)
         validate(model, device, vali_loader, stage='enhance')
         wandb.log({'Epoch': epoch})
-        wandb.log({'Learning_rate': current_lr})
-        scheduler_enhance.step()
+        # wandb.log({'Learning_rate': current_lr})
+        # scheduler_enhance.step()
 
         if epoch % 10 == 0:
             # Save EnhanceNet's parameters
-            torch.save(model.enhance_net.state_dict(), f'models/EnhanceNet/EnhanceNet_trained_1_{epoch}.pt')
+            torch.save(model.enhance_net.state_dict(), f'models/EnhanceNet/EnhanceNet_trained_2_{epoch}.pt')
 
     # Stage 3: Fine-tuning
     model = RetinexNet().to(device)
-    model.decom_net.load_state_dict(torch.load(f'models/DecomNet/DecomNet_trained_1_{num_epochs}.pt')) 
-    model.enhance_net.load_state_dict(torch.load(f'models/EnhanceNet/EnhanceNet_trained_1_{num_epochs}.pt'))
+    model.decom_net.load_state_dict(torch.load(f'models/DecomNet/DecomNet_trained_2_{num_epochs}.pt')) 
+    model.enhance_net.load_state_dict(torch.load(f'models/EnhanceNet/EnhanceNet_trained_2_{num_epochs}.pt'))
 
     for epoch in range(num_epochs+1):
-        current_lr = scheduler_enhance.get_last_lr()[0]
-        print(f"Learning rate: {current_lr}")
+        # current_lr = scheduler_enhance.get_last_lr()[0]
+        # print(f"Learning rate: {current_lr}")
         fine_tune(model, device, train_loader, optimizer_both, epoch)
         validate(model, device, vali_loader, stage='both')
         wandb.log({'Epoch': epoch})
-        wandb.log({'Learning_rate': current_lr})
-        scheduler_both.step()
+        # wandb.log({'Learning_rate': current_lr})
+        # scheduler_both.step()
 
         if epoch % 10 == 0:
             # Save EnhanceNet's parameters
-            torch.save(model.state_dict(), f'models/FineTuning/FineTuning_1_{epoch}.pt')
+            torch.save(model.state_dict(), f'models/FineTuning/FineTuning_2_{epoch}.pt')
 
 
 if __name__ == '__main__':
