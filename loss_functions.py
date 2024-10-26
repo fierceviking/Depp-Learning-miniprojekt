@@ -42,24 +42,6 @@ def smooth(I, R):
     smoothness_loss = torch.mean(smooth_x + smooth_y)
     return smoothness_loss
 
-# def compute_gradient(img):
-#     grad_x = torch.abs(img[:, :, :-1, :] - img[:, :, 1:, :])
-#     grad_y = torch.abs(img[:, :, :, :-1] - img[:, :, :, 1:])
-#     return grad_x, grad_y
-
-# def smoothness_loss(I, R, lambda_g=10):
-#     grad_I_x, grad_I_y = compute_gradient(I)
-#     grad_R_x, grad_R_y = compute_gradient(R)
-
-#     exp_term_x = torch.exp(-lambda_g * grad_R_x)
-#     exp_term_y = torch.exp(-lambda_g * grad_R_y)
-
-#     smooth_x = torch.mean(torch.abs(grad_I_x * exp_term_x))
-#     smooth_y = torch.mean(torch.abs(grad_I_y * exp_term_y))
-
-#     smooth_loss = smooth_x + smooth_y
-
-#     return smooth_loss
 
 
 def compute_decom_loss(low_light, high_light, R_low, I_low, R_high, I_high):

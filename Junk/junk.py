@@ -2,7 +2,9 @@
 Placeholder for old lines of code
 """
 
-""" def forward(self, input_low, input_high):
+""" 
+Old forward for Retinex
+def forward(self, input_low, input_high):
         # Convert the input to tensors (with float)
         #input_low = torch.from_numpy(input_low).float().cuda()
         #input_high = torch.from_numpy(input_high).float().cuda()
@@ -21,7 +23,9 @@ Placeholder for old lines of code
 
         """
 
-"""self.recon_low = F.l1_loss(R_low * I_low_concat, input_low)
+"""
+Old loss
+self.recon_low = F.l1_loss(R_low * I_low_concat, input_low)
         self.recon_high = F.l1_loss(R_high * I_high_concat, input_high)
 
         # Mutual reconstruction loss (ensures consistent reflectance and illuminance)
@@ -54,6 +58,7 @@ Placeholder for old lines of code
 
 
 """
+For testing during development
     R_high = torch.rand(1, 3, 128, 128)
     I_high = torch.rand(1, 1, 128, 128)
     input_high = torch.rand(1, 3, 128, 128)
@@ -70,6 +75,25 @@ Placeholder for old lines of code
     print(f"Enhance loss: {enhance}")
 
 """
+# Old loss functions smooth
+# def compute_gradient(img):
+#     grad_x = torch.abs(img[:, :, :-1, :] - img[:, :, 1:, :])
+#     grad_y = torch.abs(img[:, :, :, :-1] - img[:, :, :, 1:])
+#     return grad_x, grad_y
+
+# def smoothness_loss(I, R, lambda_g=10):
+#     grad_I_x, grad_I_y = compute_gradient(I)
+#     grad_R_x, grad_R_y = compute_gradient(R)
+
+#     exp_term_x = torch.exp(-lambda_g * grad_R_x)
+#     exp_term_y = torch.exp(-lambda_g * grad_R_y)
+
+#     smooth_x = torch.mean(torch.abs(grad_I_x * exp_term_x))
+#     smooth_y = torch.mean(torch.abs(grad_I_y * exp_term_y))
+
+#     smooth_loss = smooth_x + smooth_y
+
+#     return smooth_loss
 
 
 
