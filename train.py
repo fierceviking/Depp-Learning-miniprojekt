@@ -118,7 +118,7 @@ def main():
     #stage = 'finetune'
 
     # Specify num test
-    num_test = "5"
+    num_test = 9
 
 
     # Create directory if it doesn't exist
@@ -126,7 +126,7 @@ def main():
     os.makedirs(f"models/EnhanceNet/Job_{num_test}", exist_ok=True)
     os.makedirs(f"models/FineTuning/Job_{num_test}", exist_ok=True)
 
-    num_epochs = 1
+    num_epochs = 100
     batch_size = 16
     learning_rate = 1e-3
 
