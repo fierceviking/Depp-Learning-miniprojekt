@@ -100,7 +100,8 @@ def validate(model, device, vali_loader, stage='finetune'):
                 decom_loss = compute_decom_loss(low_light, high_light, R_low, I_low, R_high, I_high)
                 enhance_loss = compute_enhance_loss(high_light, R_low, I_low_enhanced)
 
-                loss = decom_loss + enhance_loss
+                weight = 0.1
+                loss = decom_loss + weight*enhance_loss
                 val_loss += loss.item()
         
         avg_val_loss = val_loss / len(vali_loader)
@@ -184,7 +185,8 @@ def main():
     optimizers = {
         'decom': optim.Adam(model.decom_net.parameters(), lr=learning_rate),
         'enhance': optim.Adam(model.enhance_net.parameters(), lr=learning_rate),
-        'finetune': optim.SGD(model.parameters(), lr=learning_rate, momentum=0.8, weight_decay=0.0001)
+        # 'finetune': optim.SGD(model.parameters(), lr=learning_rate, momentum=0.8, weight_decay=0.0001)
+        'finetune': optim.Adam(model.parameters(), lr=learning_rate)
     }
 
     schedulers = {
@@ -204,7 +206,7 @@ def main():
         wandb.log({'Learning_rate': current_lr})
         schedulers[stage].step()
         
-        if epoch % 20 == 0:
+        if epoch % 10 == 0: # Changed from 20 to 10 since finetuning only gets 50 epochs.
             if stage == 'decom':
                 torch.save(model.decom_net.state_dict(), f'models/DecomNet/Job_{num_test}/DecomNet_trained_{num_test}_{epoch}.pt')
             elif stage == 'enhance':
