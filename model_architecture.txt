@@ -1,9 +1,0 @@
-The following description is based on the article of R-Net
-
-The Decom-Net takes 5 convolutional layers with a ReLU activation between 2 conv-layers without ReLU.
-    - Sigmoid is used for the last layer (ensures that R and I are within [0;1] range)
-    - Kernel size: 3x3
-
-The Enhance-Net consists of 3 down-sampling blocks and 3 up-sampling ones. 
-
-We first train the Decom-Net and the Enhance-Net, then fine-tune the network end-to-end using stochastic gradient descent
