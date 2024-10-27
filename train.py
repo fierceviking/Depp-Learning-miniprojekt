@@ -185,7 +185,6 @@ def main():
     optimizers = {
         'decom': optim.Adam(model.decom_net.parameters(), lr=learning_rate),
         'enhance': optim.Adam(model.enhance_net.parameters(), lr=learning_rate),
-        # 'finetune': optim.SGD(model.parameters(), lr=learning_rate, momentum=0.8, weight_decay=0.0001)
         'finetune': optim.Adam(model.parameters(), lr=learning_rate)
     }
 
@@ -201,7 +200,7 @@ def main():
         current_lr = schedulers[stage].get_last_lr()[0]
         print(f"Learning rate: {current_lr}")
         train_models(model, device, train_loader, optimizers[stage], epoch, stage)
-        #validate(model, device, vali_loader, stage) #Commented for final training
+        validate(model, device, vali_loader, stage) 
         wandb.log({'Epoch': epoch})
         wandb.log({'Learning_rate': current_lr})
         schedulers[stage].step()
