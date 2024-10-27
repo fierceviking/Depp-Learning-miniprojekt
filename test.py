@@ -12,16 +12,14 @@ def load_image(image_path):
     # Resize and normalize the image
     image = cv2.resize(image, (256, 256))  # Resize to the required size
     image = image.astype(np.float32) / 255.0  # Convert to float and normalize to [0, 1]
-    image = (image - 0.5) / 0.5  # Normalize with mean and std deviation
-    image = np.transpose(image, (2, 0, 1))  # Change to CHW format
-    return torch.tensor(image).unsqueeze(0)  # Add batch dimension
+    return torch.tensor(image).permute(2, 0, 1).unsqueeze(0)  # Change to CHW format and add batch dimension
 
 def main():
     # Set device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Load model
-    path = "models/job_1/RetinexNet_epoch80.pt"
+    path = "models/FineTuning/Job_7/FineTuning_7_50.pt"
     model = RetinexNet().to(device)
 
     # Load the model state_dict with map_location
@@ -29,7 +27,7 @@ def main():
     model.eval()
 
     # Load image
-    image_path = 'test_data/low/1.png'
+    image_path = 'test_data/low/22.png'
     image = load_image(image_path).to(device)
 
     # Run inference
@@ -38,10 +36,11 @@ def main():
 
     # Save and display image using OpenCV
     enhanced_image = enhanced_image.squeeze(0).permute(1, 2, 0)  # Change dimensions to HxWxC
-    enhanced_image = (enhanced_image.cpu().numpy() * 255).astype('uint8')  # Convert to uint8 format
+    enhanced_image = np.clip(enhanced_image.cpu().numpy(), 0, 1)
+    enhanced_image = (enhanced_image * 255).astype('uint8')  # Convert to uint8 format
 
     # Save the enhanced image
-    cv2.imwrite("enhanced_image1.png", cv2.cvtColor(enhanced_image, cv2.COLOR_RGB2BGR))
+    cv2.imwrite("enhanced_image4.png", cv2.cvtColor(enhanced_image, cv2.COLOR_RGB2BGR))
     # Display the enhanced image
     cv2.imshow("Enhanced Image", enhanced_image)
     cv2.waitKey(0)  # Wait for a key press to close the window
