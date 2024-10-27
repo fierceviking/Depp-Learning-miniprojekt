@@ -44,20 +44,20 @@ class LOLDataset(Dataset):
         return low_image, high_image
     
 
-transform = transforms.Compose([
-    transforms.Resize((256, 256)),  # Resize to the same size
-    transforms.ToTensor(),          # Convert to PyTorch tensor
-    transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))  # Normalize with mean and std deviation
-])
+# transform = transforms.Compose([
+#     transforms.Resize((256, 256)),  # Resize to the same size
+#     transforms.ToTensor(),          # Convert to PyTorch tensor
+#     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))  # Normalize with mean and std deviation
+# ])
 
-def main():
-    train_low_dir = 'train_data/low'
-    train_high_dir = 'train_data/high'
+# # def main():
+# #     train_low_dir = 'train_data/low'
+# #     train_high_dir = 'train_data/high'
 
-    train_dataset = LOLDataset(train_low_dir, train_high_dir, transform=transform)
+# #     train_dataset = LOLDataset(train_low_dir, train_high_dir, transform=transform)
 
-    train_loader = DataLoader(train_dataset, batch_size=1, shuffle=True, num_workers=1)
+# #     train_loader = DataLoader(train_dataset, batch_size=1, shuffle=True, num_workers=1)
 
 
-if __name__ == '__main__':
-    main()
+# # if __name__ == '__main__':
+# #     main()
