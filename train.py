@@ -60,7 +60,7 @@ def train_models(model, device, train_loader, optimizer, epoch, stage):
             wandb.log({f"{stage.title()} loss": loss.item()})
 
 
-def validate(model, device, vali_loader, stage='both'):
+def validate(model, device, vali_loader, stage='finetune'):
     model.eval()
     val_loss = 0
 
@@ -89,7 +89,7 @@ def validate(model, device, vali_loader, stage='both'):
                 enhance_loss = compute_enhance_loss(high_light, R_low, I_low_enhanced)
                 val_loss += enhance_loss.item()
 
-            elif stage == 'both':
+            elif stage == 'finetune':
                 # Forward pass: Decomposing and enhancing the low-light image
                 enhanced_image, R_low, I_low, I_low_enhanced = model(low_light)
 
@@ -124,7 +124,7 @@ def main():
     os.makedirs(f"models/EnhanceNet/Job_{num_test}", exist_ok=True)
     os.makedirs(f"models/FineTuning/Job_{num_test}", exist_ok=True)
 
-    num_epochs = 100
+    num_epochs = 1
     batch_size = 16
     learning_rate = 1e-3
 
@@ -207,7 +207,7 @@ def main():
                 torch.save(model.decom_net.state_dict(), f'models/DecomNet/Job_{num_test}/DecomNet_trained_{num_test}_{epoch}.pt')
             elif stage == 'enhance':
                 torch.save(model.enhance_net.state_dict(), f'models/EnhanceNet/Job_{num_test}/EnhanceNet_trained_{num_test}_{epoch}.pt')
-            else:
+            elif stage == 'finetune':
                 torch.save(model.state_dict(), f'models/FineTuning/Job_{num_test}/FineTuning_{num_test}_{epoch}.pt')
 
    
