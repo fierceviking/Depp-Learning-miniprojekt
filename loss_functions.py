@@ -70,7 +70,6 @@ def compute_decom_loss(low_light, high_light, R_low, I_low, R_high, I_high):
 
 def compute_enhance_loss(high_light, R_low, I_low_enhanced):
     I_low_enhanced_concat = torch.cat((I_low_enhanced, I_low_enhanced, I_low_enhanced), dim=1)
-
     reconstuction_loss = F.l1_loss(R_low * I_low_enhanced_concat, high_light)
     smooth_loss_enhanced = smooth(R=R_low, I=I_low_enhanced)
 

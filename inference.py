@@ -19,7 +19,7 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Load model
-    path = "models/FineTuning/Job_7/FineTuning_7_50.pt"
+    path = "models/FineTuning/Job_8/FineTuning_8_50.pt"
     model = RetinexNet().to(device)
 
     # Load the model state_dict with map_location
@@ -40,7 +40,8 @@ def main():
     enhanced_image = (enhanced_image * 255).astype('uint8')  # Convert to uint8 format
 
     # Save the enhanced image
-    cv2.imwrite("enhanced_image4.png", cv2.cvtColor(enhanced_image, cv2.COLOR_RGB2BGR))
+    cv2.imwrite("22_enhanced.png", cv2.cvtColor(enhanced_image, cv2.COLOR_RGB2BGR))
+    
     # Display the enhanced image
     cv2.imshow("Enhanced Image", enhanced_image)
     cv2.waitKey(0)  # Wait for a key press to close the window
