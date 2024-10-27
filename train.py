@@ -50,7 +50,8 @@ def train_models(model, device, train_loader, optimizer, epoch, stage):
             decom_loss = compute_decom_loss(low_light, high_light, 
                                             R_low, I_low, 
                                             R_high, I_high)
-            loss = decom_loss + enhance_loss
+            weight = 0.1
+            loss = decom_loss + weight*enhance_loss
         
         loss.backward()
         optimizer.step()
