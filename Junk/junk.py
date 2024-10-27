@@ -103,3 +103,18 @@ print("Length of train data: ", len(train_high_names))
 
 val_high_names = os.listdir('vali_data/high')
 print("Length of validation data: ", len(val_high_names))
+
+
+variable = "decom"
+
+print(f'Hej med dig, {variable.title()}')
+
+"""
+ # optimizer_decom = optim.Adam(model.decom_net.parameters(), lr=learning_rate)
+    # optimizer_enhance = optim.Adam(model.enhance_net.parameters(), lr=learning_rate)
+    # optimizer_finetune = optim.SGD(model.parameters(), lr=learning_rate, momentum=0.8, weight_decay=0.0001)
+
+    # scheduler_decom = StepLR(optimizer_decom, step_size=20, gamma=0.5)
+    # scheduler_enhance = StepLR(optimizer_enhance, step_size=20, gamma=0.5)
+    # scheduler_finetune = StepLR(optimizer_finetune, step_size=20, gamma=0.5)
+"""
