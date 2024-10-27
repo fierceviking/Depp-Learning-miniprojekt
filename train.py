@@ -157,17 +157,20 @@ def main():
     ])
 
     # Define training and validation set
-    train_low_dir = 'train_data/low'
-    train_high_dir = 'train_data/high'
+    # train_low_dir = 'train_data/low'
+    # train_high_dir = 'train_data/high'
+    train_low_dir = 'full_train/low'
+    train_high_dir = 'full_train/high'
+
     vali_low_dir = 'vali_data/low'
     vali_high_dir = 'vali_data/high'
     patch_size = (96,96)
 
     train_data = LOLDataset(train_low_dir, train_high_dir, transform=train_transform, patch_size=patch_size)
-    vali_data = LOLDataset(vali_low_dir, vali_high_dir, transform=vali_transform, patch_size=patch_size)
+    # vali_data = LOLDataset(vali_low_dir, vali_high_dir, transform=vali_transform, patch_size=patch_size)
     
     train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True, num_workers=2)
-    vali_loader = DataLoader(vali_data, batch_size=batch_size, shuffle=False)
+    # vali_loader = DataLoader(vali_data, batch_size=batch_size, shuffle=False)
 
 
     if stage == 'decom':
@@ -202,7 +205,7 @@ def main():
         current_lr = schedulers[stage].get_last_lr()[0]
         print(f"Learning rate: {current_lr}")
         train_models(model, device, train_loader, optimizers[stage], epoch, stage)
-        validate(model, device, vali_loader, stage)
+        #validate(model, device, vali_loader, stage) #Commented for final training
         wandb.log({'Epoch': epoch})
         wandb.log({'Learning_rate': current_lr})
         schedulers[stage].step()
