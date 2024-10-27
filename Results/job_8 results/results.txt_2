@@ -1,0 +1,3 @@
+Used weights: models/FineTuning/Job_8/FineTuning_8_10.pt
+Mean PSNR on test set: 15.7
+Mean SSIM on test set: 0.6
