@@ -143,13 +143,15 @@ def main():
         transforms.ToTensor(), # Convert to PyTorch tensor
         transforms.RandomHorizontalFlip(),
         transforms.RandomVerticalFlip(),
-        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))  # Normalize with mean and std deviation
+        transforms.Normalize((0, 0, 0), (1, 1, 1))  # Normalize min/max scaling
+        # transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))  # Normalize with mean and std deviation
     ])
 
     vali_transform = transforms.Compose([
         transforms.Resize((256, 256)),
         transforms.ToTensor(),
-        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+        transforms.Normalize((0, 0, 0), (1, 1, 1))
+        # transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)) 
     ])
 
     # Define training and validation set
