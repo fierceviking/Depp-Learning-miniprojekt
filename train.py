@@ -50,6 +50,7 @@ def train_models(model, device, train_loader, optimizer, epoch, stage):
             decom_loss = compute_decom_loss(low_light, high_light, 
                                             R_low, I_low, 
                                             R_high, I_high)
+
             weight = 0.1
             loss = decom_loss + weight*enhance_loss
         
@@ -100,6 +101,7 @@ def validate(model, device, vali_loader, stage='finetune'):
                 # Compute both losses
                 decom_loss = compute_decom_loss(low_light, high_light, R_low, I_low, R_high, I_high)
                 enhance_loss = compute_enhance_loss(high_light, R_low, I_low_enhanced)
+
 
                 weight = 0.1
                 loss = decom_loss + weight*enhance_loss
