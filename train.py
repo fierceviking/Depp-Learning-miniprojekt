@@ -40,7 +40,7 @@ def train_models(model, device, train_loader, optimizer, epoch, stage):
 
             loss = compute_enhance_loss(high_light, R_low, I_low_enhanced)
 
-        else:
+        elif stage == 'finetune':
             # Fine tuning
             # Forward pass: Decomposing and enhancing the low-light image
             enhanced_image, R_low, I_low, I_low_enhanced = model(low_light)
@@ -55,7 +55,7 @@ def train_models(model, device, train_loader, optimizer, epoch, stage):
         loss.backward()
         optimizer.step()
 
-        if batch_idx % 100 == 0:
+        if batch_idx % 10 == 0:
             print(f"Train Epoch: {epoch}, Iteration: {batch_idx}, {stage.title()} Loss: {loss.item()}")
             wandb.log({f"{stage.title()} loss": loss.item()})
 
@@ -176,7 +176,7 @@ def main():
     elif stage == 'finetune':
         model = RetinexNet(train_decom_only=False, train_enhance_only=False).to(device)
         model.decom_net.load_state_dict(torch.load(f'models/DecomNet/Job_{num_test}/DecomNet_trained_{num_test}_{num_epochs}.pt')) 
-        model.enhance_net.load_state_dict(torch.load(f'models/EnhanceNet/EnhanceNet_trained_{num_test}_{num_epochs}.pt'))
+        model.enhance_net.load_state_dict(torch.load(f'models/EnhanceNet/Job_{num_test}/EnhanceNet_trained_{num_test}_{num_epochs}.pt'))
 
     # Define optimizers and schedulers
     optimizers = {
