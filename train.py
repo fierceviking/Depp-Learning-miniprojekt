@@ -155,11 +155,11 @@ def main():
     ])
 
     # Define training and validation set
-    train_low_dir = 'train_data/low'
-    train_high_dir = 'train_data/high'
+    train_low_dir = 'data/train_data/low'
+    train_high_dir = 'data/train_data/high'
 
-    vali_low_dir = 'vali_data/low'
-    vali_high_dir = 'vali_data/high'
+    vali_low_dir = 'data/vali_data/low'
+    vali_high_dir = 'data/vali_data/high'
     patch_size = (96,96)
 
     train_data = LOLDataset(train_low_dir, train_high_dir, transform=train_transform, patch_size=patch_size)
