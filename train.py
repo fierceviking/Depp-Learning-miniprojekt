@@ -118,7 +118,7 @@ def main():
     #stage = 'finetune'
 
     # Specify num test
-    num_test = 9
+    num_test = 8
 
 
     # Create directory if it doesn't exist
@@ -146,31 +146,27 @@ def main():
         transforms.RandomHorizontalFlip(),
         transforms.RandomVerticalFlip(),
         transforms.Normalize((0, 0, 0), (1, 1, 1))  # Normalize min/max scaling
-        # transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))  # Normalize with mean and std deviation
     ])
 
     vali_transform = transforms.Compose([
         transforms.Resize((256, 256)),
         transforms.ToTensor(),
         transforms.Normalize((0, 0, 0), (1, 1, 1))
-        # transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)) 
     ])
 
     # Define training and validation set
-    # train_low_dir = 'train_data/low'
-    # train_high_dir = 'train_data/high'
-    train_low_dir = 'full_train/low'
-    train_high_dir = 'full_train/high'
+    train_low_dir = 'train_data/low'
+    train_high_dir = 'train_data/high'
 
     vali_low_dir = 'vali_data/low'
     vali_high_dir = 'vali_data/high'
     patch_size = (96,96)
 
     train_data = LOLDataset(train_low_dir, train_high_dir, transform=train_transform, patch_size=patch_size)
-    # vali_data = LOLDataset(vali_low_dir, vali_high_dir, transform=vali_transform, patch_size=patch_size)
+    vali_data = LOLDataset(vali_low_dir, vali_high_dir, transform=vali_transform, patch_size=patch_size)
     
     train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True, num_workers=2)
-    # vali_loader = DataLoader(vali_data, batch_size=batch_size, shuffle=False)
+    vali_loader = DataLoader(vali_data, batch_size=batch_size, shuffle=False)
 
 
     if stage == 'decom':
