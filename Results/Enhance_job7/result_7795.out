@@ -1,0 +1,608 @@
+Learning rate: 0.001
+Train Epoch: 0, Iteration: 0, Enhance Loss: 0.4662402272224426
+Train Epoch: 0, Iteration: 10, Enhance Loss: 0.19762533903121948
+Train Epoch: 0, Iteration: 20, Enhance Loss: 0.2077339142560959
+
+Average validation loss: 0.1961441993713379
+Learning rate: 0.001
+Train Epoch: 1, Iteration: 0, Enhance Loss: 0.20493781566619873
+Train Epoch: 1, Iteration: 10, Enhance Loss: 0.15676945447921753
+Train Epoch: 1, Iteration: 20, Enhance Loss: 0.20295165479183197
+
+Average validation loss: 0.17204882502555846
+Learning rate: 0.001
+Train Epoch: 2, Iteration: 0, Enhance Loss: 0.17810259759426117
+Train Epoch: 2, Iteration: 10, Enhance Loss: 0.20589487254619598
+Train Epoch: 2, Iteration: 20, Enhance Loss: 0.18362456560134888
+
+Average validation loss: 0.15644698441028596
+Learning rate: 0.001
+Train Epoch: 3, Iteration: 0, Enhance Loss: 0.23513679206371307
+Train Epoch: 3, Iteration: 10, Enhance Loss: 0.18194560706615448
+Train Epoch: 3, Iteration: 20, Enhance Loss: 0.1779249757528305
+
+Average validation loss: 0.16904529333114623
+Learning rate: 0.001
+Train Epoch: 4, Iteration: 0, Enhance Loss: 0.19435948133468628
+Train Epoch: 4, Iteration: 10, Enhance Loss: 0.16577962040901184
+Train Epoch: 4, Iteration: 20, Enhance Loss: 0.15027539432048798
+
+Average validation loss: 0.16704416871070862
+Learning rate: 0.001
+Train Epoch: 5, Iteration: 0, Enhance Loss: 0.171293243765831
+Train Epoch: 5, Iteration: 10, Enhance Loss: 0.2105395644903183
+Train Epoch: 5, Iteration: 20, Enhance Loss: 0.17837880551815033
+
+Average validation loss: 0.17852559983730315
+Learning rate: 0.001
+Train Epoch: 6, Iteration: 0, Enhance Loss: 0.21012136340141296
+Train Epoch: 6, Iteration: 10, Enhance Loss: 0.19838868081569672
+Train Epoch: 6, Iteration: 20, Enhance Loss: 0.1670461893081665
+
+Average validation loss: 0.1748587191104889
+Learning rate: 0.001
+Train Epoch: 7, Iteration: 0, Enhance Loss: 0.19006097316741943
+Train Epoch: 7, Iteration: 10, Enhance Loss: 0.16955439746379852
+Train Epoch: 7, Iteration: 20, Enhance Loss: 0.17636898159980774
+
+Average validation loss: 0.17107512354850768
+Learning rate: 0.001
+Train Epoch: 8, Iteration: 0, Enhance Loss: 0.1894332617521286
+Train Epoch: 8, Iteration: 10, Enhance Loss: 0.17871396243572235
+Train Epoch: 8, Iteration: 20, Enhance Loss: 0.1977573037147522
+
+Average validation loss: 0.16573244333267212
+Learning rate: 0.001
+Train Epoch: 9, Iteration: 0, Enhance Loss: 0.18212072551250458
+Train Epoch: 9, Iteration: 10, Enhance Loss: 0.17677558958530426
+Train Epoch: 9, Iteration: 20, Enhance Loss: 0.20273977518081665
+
+Average validation loss: 0.17417789548635482
+Learning rate: 0.001
+Train Epoch: 10, Iteration: 0, Enhance Loss: 0.19593629240989685
+Train Epoch: 10, Iteration: 10, Enhance Loss: 0.1501072496175766
+Train Epoch: 10, Iteration: 20, Enhance Loss: 0.19726057350635529
+
+Average validation loss: 0.16548929512500762
+Learning rate: 0.001
+Train Epoch: 11, Iteration: 0, Enhance Loss: 0.18955843150615692
+Train Epoch: 11, Iteration: 10, Enhance Loss: 0.18743197619915009
+Train Epoch: 11, Iteration: 20, Enhance Loss: 0.17339639365673065
+
+Average validation loss: 0.15934278666973115
+Learning rate: 0.001
+Train Epoch: 12, Iteration: 0, Enhance Loss: 0.18642129004001617
+Train Epoch: 12, Iteration: 10, Enhance Loss: 0.16431476175785065
+Train Epoch: 12, Iteration: 20, Enhance Loss: 0.1666925847530365
+
+Average validation loss: 0.1685527741909027
+Learning rate: 0.001
+Train Epoch: 13, Iteration: 0, Enhance Loss: 0.16434288024902344
+Train Epoch: 13, Iteration: 10, Enhance Loss: 0.1924298256635666
+Train Epoch: 13, Iteration: 20, Enhance Loss: 0.1902635544538498
+
+Average validation loss: 0.1624780774116516
+Learning rate: 0.001
+Train Epoch: 14, Iteration: 0, Enhance Loss: 0.16655267775058746
+Train Epoch: 14, Iteration: 10, Enhance Loss: 0.17415301501750946
+Train Epoch: 14, Iteration: 20, Enhance Loss: 0.18685074150562286
+
+Average validation loss: 0.1644023448228836
+Learning rate: 0.001
+Train Epoch: 15, Iteration: 0, Enhance Loss: 0.1445108950138092
+Train Epoch: 15, Iteration: 10, Enhance Loss: 0.17164301872253418
+Train Epoch: 15, Iteration: 20, Enhance Loss: 0.16596196591854095
+
+Average validation loss: 0.16095560789108276
+Learning rate: 0.001
+Train Epoch: 16, Iteration: 0, Enhance Loss: 0.19321896135807037
+Train Epoch: 16, Iteration: 10, Enhance Loss: 0.23439261317253113
+Train Epoch: 16, Iteration: 20, Enhance Loss: 0.17680449783802032
+
+Average validation loss: 0.1687214881181717
+Learning rate: 0.001
+Train Epoch: 17, Iteration: 0, Enhance Loss: 0.17267970740795135
+Train Epoch: 17, Iteration: 10, Enhance Loss: 0.17431612312793732
+Train Epoch: 17, Iteration: 20, Enhance Loss: 0.1496836394071579
+
+Average validation loss: 0.15237123817205428
+Learning rate: 0.001
+Train Epoch: 18, Iteration: 0, Enhance Loss: 0.1910930573940277
+Train Epoch: 18, Iteration: 10, Enhance Loss: 0.15943428874015808
+Train Epoch: 18, Iteration: 20, Enhance Loss: 0.15037626028060913
+
+Average validation loss: 0.1560102015733719
+Learning rate: 0.001
+Train Epoch: 19, Iteration: 0, Enhance Loss: 0.15699197351932526
+Train Epoch: 19, Iteration: 10, Enhance Loss: 0.22342391312122345
+Train Epoch: 19, Iteration: 20, Enhance Loss: 0.22729559242725372
+
+Average validation loss: 0.17331185936927795
+Learning rate: 0.0005
+Train Epoch: 20, Iteration: 0, Enhance Loss: 0.15543974936008453
+Train Epoch: 20, Iteration: 10, Enhance Loss: 0.19074930250644684
+Train Epoch: 20, Iteration: 20, Enhance Loss: 0.17169591784477234
+
+Average validation loss: 0.1703845053911209
+Learning rate: 0.0005
+Train Epoch: 21, Iteration: 0, Enhance Loss: 0.16904538869857788
+Train Epoch: 21, Iteration: 10, Enhance Loss: 0.18603722751140594
+Train Epoch: 21, Iteration: 20, Enhance Loss: 0.1698695719242096
+
+Average validation loss: 0.16332510113716125
+Learning rate: 0.0005
+Train Epoch: 22, Iteration: 0, Enhance Loss: 0.1599707007408142
+Train Epoch: 22, Iteration: 10, Enhance Loss: 0.1815299689769745
+Train Epoch: 22, Iteration: 20, Enhance Loss: 0.19688518345355988
+
+Average validation loss: 0.15643806308507918
+Learning rate: 0.0005
+Train Epoch: 23, Iteration: 0, Enhance Loss: 0.18662779033184052
+Train Epoch: 23, Iteration: 10, Enhance Loss: 0.16720624268054962
+Train Epoch: 23, Iteration: 20, Enhance Loss: 0.19859756529331207
+
+Average validation loss: 0.14906812459230423
+Learning rate: 0.0005
+Train Epoch: 24, Iteration: 0, Enhance Loss: 0.18305116891860962
+Train Epoch: 24, Iteration: 10, Enhance Loss: 0.15545162558555603
+Train Epoch: 24, Iteration: 20, Enhance Loss: 0.20076988637447357
+
+Average validation loss: 0.16036814749240874
+Learning rate: 0.0005
+Train Epoch: 25, Iteration: 0, Enhance Loss: 0.19878481328487396
+Train Epoch: 25, Iteration: 10, Enhance Loss: 0.21287381649017334
+Train Epoch: 25, Iteration: 20, Enhance Loss: 0.1801568865776062
+
+Average validation loss: 0.15194237530231475
+Learning rate: 0.0005
+Train Epoch: 26, Iteration: 0, Enhance Loss: 0.18866437673568726
+Train Epoch: 26, Iteration: 10, Enhance Loss: 0.1914985626935959
+Train Epoch: 26, Iteration: 20, Enhance Loss: 0.17139704525470734
+
+Average validation loss: 0.1530733436346054
+Learning rate: 0.0005
+Train Epoch: 27, Iteration: 0, Enhance Loss: 0.16392728686332703
+Train Epoch: 27, Iteration: 10, Enhance Loss: 0.17828533053398132
+Train Epoch: 27, Iteration: 20, Enhance Loss: 0.1813165247440338
+
+Average validation loss: 0.15522840321063996
+Learning rate: 0.0005
+Train Epoch: 28, Iteration: 0, Enhance Loss: 0.18623121082782745
+Train Epoch: 28, Iteration: 10, Enhance Loss: 0.17572250962257385
+Train Epoch: 28, Iteration: 20, Enhance Loss: 0.2076033353805542
+
+Average validation loss: 0.1511279433965683
+Learning rate: 0.0005
+Train Epoch: 29, Iteration: 0, Enhance Loss: 0.18114128708839417
+Train Epoch: 29, Iteration: 10, Enhance Loss: 0.16612310707569122
+Train Epoch: 29, Iteration: 20, Enhance Loss: 0.1902001053094864
+
+Average validation loss: 0.16012374460697174
+Learning rate: 0.0005
+Train Epoch: 30, Iteration: 0, Enhance Loss: 0.1909126341342926
+Train Epoch: 30, Iteration: 10, Enhance Loss: 0.1672210395336151
+Train Epoch: 30, Iteration: 20, Enhance Loss: 0.1867837905883789
+
+Average validation loss: 0.15524226129055024
+Learning rate: 0.0005
+Train Epoch: 31, Iteration: 0, Enhance Loss: 0.15854260325431824
+Train Epoch: 31, Iteration: 10, Enhance Loss: 0.19390244781970978
+Train Epoch: 31, Iteration: 20, Enhance Loss: 0.21465753018856049
+
+Average validation loss: 0.16036048531532288
+Learning rate: 0.0005
+Train Epoch: 32, Iteration: 0, Enhance Loss: 0.16590064764022827
+Train Epoch: 32, Iteration: 10, Enhance Loss: 0.21613295376300812
+Train Epoch: 32, Iteration: 20, Enhance Loss: 0.1671028882265091
+
+Average validation loss: 0.16889414191246033
+Learning rate: 0.0005
+Train Epoch: 33, Iteration: 0, Enhance Loss: 0.19717232882976532
+Train Epoch: 33, Iteration: 10, Enhance Loss: 0.17465916275978088
+Train Epoch: 33, Iteration: 20, Enhance Loss: 0.15712478756904602
+
+Average validation loss: 0.14611052870750427
+Learning rate: 0.0005
+Train Epoch: 34, Iteration: 0, Enhance Loss: 0.17682795226573944
+Train Epoch: 34, Iteration: 10, Enhance Loss: 0.16672149300575256
+Train Epoch: 34, Iteration: 20, Enhance Loss: 0.14777755737304688
+
+Average validation loss: 0.1620483487844467
+Learning rate: 0.0005
+Train Epoch: 35, Iteration: 0, Enhance Loss: 0.17390775680541992
+Train Epoch: 35, Iteration: 10, Enhance Loss: 0.1991126537322998
+Train Epoch: 35, Iteration: 20, Enhance Loss: 0.18612638115882874
+
+Average validation loss: 0.1650129586458206
+Learning rate: 0.0005
+Train Epoch: 36, Iteration: 0, Enhance Loss: 0.17841286957263947
+Train Epoch: 36, Iteration: 10, Enhance Loss: 0.17567919194698334
+Train Epoch: 36, Iteration: 20, Enhance Loss: 0.16990630328655243
+
+Average validation loss: 0.15227653980255126
+Learning rate: 0.0005
+Train Epoch: 37, Iteration: 0, Enhance Loss: 0.16166526079177856
+Train Epoch: 37, Iteration: 10, Enhance Loss: 0.1617116630077362
+Train Epoch: 37, Iteration: 20, Enhance Loss: 0.13566376268863678
+
+Average validation loss: 0.1544498085975647
+Learning rate: 0.0005
+Train Epoch: 38, Iteration: 0, Enhance Loss: 0.17645427584648132
+Train Epoch: 38, Iteration: 10, Enhance Loss: 0.18574687838554382
+Train Epoch: 38, Iteration: 20, Enhance Loss: 0.19898825883865356
+
+Average validation loss: 0.16925136744976044
+Learning rate: 0.0005
+Train Epoch: 39, Iteration: 0, Enhance Loss: 0.14923293888568878
+Train Epoch: 39, Iteration: 10, Enhance Loss: 0.1824069321155548
+Train Epoch: 39, Iteration: 20, Enhance Loss: 0.18451787531375885
+
+Average validation loss: 0.15091439187526703
+Learning rate: 0.00025
+Train Epoch: 40, Iteration: 0, Enhance Loss: 0.16615308821201324
+Train Epoch: 40, Iteration: 10, Enhance Loss: 0.19115886092185974
+Train Epoch: 40, Iteration: 20, Enhance Loss: 0.17646555602550507
+
+Average validation loss: 0.1534410983324051
+Learning rate: 0.00025
+Train Epoch: 41, Iteration: 0, Enhance Loss: 0.15222400426864624
+Train Epoch: 41, Iteration: 10, Enhance Loss: 0.17339883744716644
+Train Epoch: 41, Iteration: 20, Enhance Loss: 0.17560580372810364
+
+Average validation loss: 0.1468840628862381
+Learning rate: 0.00025
+Train Epoch: 42, Iteration: 0, Enhance Loss: 0.16354900598526
+Train Epoch: 42, Iteration: 10, Enhance Loss: 0.1714462786912918
+Train Epoch: 42, Iteration: 20, Enhance Loss: 0.1649545282125473
+
+Average validation loss: 0.1543222814798355
+Learning rate: 0.00025
+Train Epoch: 43, Iteration: 0, Enhance Loss: 0.1695694923400879
+Train Epoch: 43, Iteration: 10, Enhance Loss: 0.18428713083267212
+Train Epoch: 43, Iteration: 20, Enhance Loss: 0.20811933279037476
+
+Average validation loss: 0.16204417645931243
+Learning rate: 0.00025
+Train Epoch: 44, Iteration: 0, Enhance Loss: 0.14872342348098755
+Train Epoch: 44, Iteration: 10, Enhance Loss: 0.16144335269927979
+Train Epoch: 44, Iteration: 20, Enhance Loss: 0.19378575682640076
+
+Average validation loss: 0.16340935230255127
+Learning rate: 0.00025
+Train Epoch: 45, Iteration: 0, Enhance Loss: 0.1433492749929428
+Train Epoch: 45, Iteration: 10, Enhance Loss: 0.14452584087848663
+Train Epoch: 45, Iteration: 20, Enhance Loss: 0.17051054537296295
+
+Average validation loss: 0.14143578261137008
+Learning rate: 0.00025
+Train Epoch: 46, Iteration: 0, Enhance Loss: 0.19062386453151703
+Train Epoch: 46, Iteration: 10, Enhance Loss: 0.15870390832424164
+Train Epoch: 46, Iteration: 20, Enhance Loss: 0.18556465208530426
+
+Average validation loss: 0.14896655976772308
+Learning rate: 0.00025
+Train Epoch: 47, Iteration: 0, Enhance Loss: 0.19021576642990112
+Train Epoch: 47, Iteration: 10, Enhance Loss: 0.18241548538208008
+Train Epoch: 47, Iteration: 20, Enhance Loss: 0.1876235455274582
+
+Average validation loss: 0.16152325570583342
+Learning rate: 0.00025
+Train Epoch: 48, Iteration: 0, Enhance Loss: 0.17310994863510132
+Train Epoch: 48, Iteration: 10, Enhance Loss: 0.200193852186203
+Train Epoch: 48, Iteration: 20, Enhance Loss: 0.16861821711063385
+
+Average validation loss: 0.14725715667009354
+Learning rate: 0.00025
+Train Epoch: 49, Iteration: 0, Enhance Loss: 0.19526778161525726
+Train Epoch: 49, Iteration: 10, Enhance Loss: 0.15727798640727997
+Train Epoch: 49, Iteration: 20, Enhance Loss: 0.20895670354366302
+
+Average validation loss: 0.1531330704689026
+Learning rate: 0.00025
+Train Epoch: 50, Iteration: 0, Enhance Loss: 0.15552204847335815
+Train Epoch: 50, Iteration: 10, Enhance Loss: 0.17729194462299347
+Train Epoch: 50, Iteration: 20, Enhance Loss: 0.1601523905992508
+
+Average validation loss: 0.15013614892959595
+Learning rate: 0.00025
+Train Epoch: 51, Iteration: 0, Enhance Loss: 0.14903344213962555
+Train Epoch: 51, Iteration: 10, Enhance Loss: 0.1843300610780716
+Train Epoch: 51, Iteration: 20, Enhance Loss: 0.1924724280834198
+
+Average validation loss: 0.15932879149913787
+Learning rate: 0.00025
+Train Epoch: 52, Iteration: 0, Enhance Loss: 0.20326358079910278
+Train Epoch: 52, Iteration: 10, Enhance Loss: 0.17835290729999542
+Train Epoch: 52, Iteration: 20, Enhance Loss: 0.20142428576946259
+
+Average validation loss: 0.14780550003051757
+Learning rate: 0.00025
+Train Epoch: 53, Iteration: 0, Enhance Loss: 0.15254320204257965
+Train Epoch: 53, Iteration: 10, Enhance Loss: 0.17939628660678864
+Train Epoch: 53, Iteration: 20, Enhance Loss: 0.1931287944316864
+
+Average validation loss: 0.15485818386077882
+Learning rate: 0.00025
+Train Epoch: 54, Iteration: 0, Enhance Loss: 0.17618273198604584
+Train Epoch: 54, Iteration: 10, Enhance Loss: 0.15814995765686035
+Train Epoch: 54, Iteration: 20, Enhance Loss: 0.13606896996498108
+
+Average validation loss: 0.1527815967798233
+Learning rate: 0.00025
+Train Epoch: 55, Iteration: 0, Enhance Loss: 0.179728701710701
+Train Epoch: 55, Iteration: 10, Enhance Loss: 0.1801678091287613
+Train Epoch: 55, Iteration: 20, Enhance Loss: 0.1724829375743866
+
+Average validation loss: 0.16023846566677094
+Learning rate: 0.00025
+Train Epoch: 56, Iteration: 0, Enhance Loss: 0.21661370992660522
+Train Epoch: 56, Iteration: 10, Enhance Loss: 0.18060043454170227
+Train Epoch: 56, Iteration: 20, Enhance Loss: 0.18423084914684296
+
+Average validation loss: 0.15009911954402924
+Learning rate: 0.00025
+Train Epoch: 57, Iteration: 0, Enhance Loss: 0.1851729154586792
+Train Epoch: 57, Iteration: 10, Enhance Loss: 0.2050900161266327
+Train Epoch: 57, Iteration: 20, Enhance Loss: 0.19544613361358643
+
+Average validation loss: 0.15245766639709474
+Learning rate: 0.00025
+Train Epoch: 58, Iteration: 0, Enhance Loss: 0.18071798980236053
+Train Epoch: 58, Iteration: 10, Enhance Loss: 0.17626327276229858
+Train Epoch: 58, Iteration: 20, Enhance Loss: 0.17408180236816406
+
+Average validation loss: 0.17197071611881257
+Learning rate: 0.00025
+Train Epoch: 59, Iteration: 0, Enhance Loss: 0.17982761561870575
+Train Epoch: 59, Iteration: 10, Enhance Loss: 0.14067041873931885
+Train Epoch: 59, Iteration: 20, Enhance Loss: 0.2087727189064026
+
+Average validation loss: 0.15040709376335143
+Learning rate: 0.000125
+Train Epoch: 60, Iteration: 0, Enhance Loss: 0.16860248148441315
+Train Epoch: 60, Iteration: 10, Enhance Loss: 0.16381821036338806
+Train Epoch: 60, Iteration: 20, Enhance Loss: 0.17896926403045654
+
+Average validation loss: 0.15783820748329164
+Learning rate: 0.000125
+Train Epoch: 61, Iteration: 0, Enhance Loss: 0.16183507442474365
+Train Epoch: 61, Iteration: 10, Enhance Loss: 0.1959783434867859
+Train Epoch: 61, Iteration: 20, Enhance Loss: 0.16856549680233002
+
+Average validation loss: 0.15274596810340882
+Learning rate: 0.000125
+Train Epoch: 62, Iteration: 0, Enhance Loss: 0.16600479185581207
+Train Epoch: 62, Iteration: 10, Enhance Loss: 0.16288067400455475
+Train Epoch: 62, Iteration: 20, Enhance Loss: 0.17872636020183563
+
+Average validation loss: 0.15218619704246522
+Learning rate: 0.000125
+Train Epoch: 63, Iteration: 0, Enhance Loss: 0.16051311790943146
+Train Epoch: 63, Iteration: 10, Enhance Loss: 0.144494891166687
+Train Epoch: 63, Iteration: 20, Enhance Loss: 0.21695837378501892
+
+Average validation loss: 0.1540290057659149
+Learning rate: 0.000125
+Train Epoch: 64, Iteration: 0, Enhance Loss: 0.19031573832035065
+Train Epoch: 64, Iteration: 10, Enhance Loss: 0.1629282683134079
+Train Epoch: 64, Iteration: 20, Enhance Loss: 0.14987526834011078
+
+Average validation loss: 0.15694402456283568
+Learning rate: 0.000125
+Train Epoch: 65, Iteration: 0, Enhance Loss: 0.1663329303264618
+Train Epoch: 65, Iteration: 10, Enhance Loss: 0.1621015965938568
+Train Epoch: 65, Iteration: 20, Enhance Loss: 0.213533416390419
+
+Average validation loss: 0.14849914908409118
+Learning rate: 0.000125
+Train Epoch: 66, Iteration: 0, Enhance Loss: 0.12852323055267334
+Train Epoch: 66, Iteration: 10, Enhance Loss: 0.15383918583393097
+Train Epoch: 66, Iteration: 20, Enhance Loss: 0.17018771171569824
+
+Average validation loss: 0.14862256795167922
+Learning rate: 0.000125
+Train Epoch: 67, Iteration: 0, Enhance Loss: 0.18621203303337097
+Train Epoch: 67, Iteration: 10, Enhance Loss: 0.19285453855991364
+Train Epoch: 67, Iteration: 20, Enhance Loss: 0.1674782633781433
+
+Average validation loss: 0.14228922128677368
+Learning rate: 0.000125
+Train Epoch: 68, Iteration: 0, Enhance Loss: 0.18824973702430725
+Train Epoch: 68, Iteration: 10, Enhance Loss: 0.18079069256782532
+Train Epoch: 68, Iteration: 20, Enhance Loss: 0.18205080926418304
+
+Average validation loss: 0.14906851053237916
+Learning rate: 0.000125
+Train Epoch: 69, Iteration: 0, Enhance Loss: 0.17305625975131989
+Train Epoch: 69, Iteration: 10, Enhance Loss: 0.18151171505451202
+Train Epoch: 69, Iteration: 20, Enhance Loss: 0.1895129382610321
+
+Average validation loss: 0.14825595319271087
+Learning rate: 0.000125
+Train Epoch: 70, Iteration: 0, Enhance Loss: 0.18794246017932892
+Train Epoch: 70, Iteration: 10, Enhance Loss: 0.1561690866947174
+Train Epoch: 70, Iteration: 20, Enhance Loss: 0.17470160126686096
+
+Average validation loss: 0.15151775181293486
+Learning rate: 0.000125
+Train Epoch: 71, Iteration: 0, Enhance Loss: 0.13015830516815186
+Train Epoch: 71, Iteration: 10, Enhance Loss: 0.20288294553756714
+Train Epoch: 71, Iteration: 20, Enhance Loss: 0.16791173815727234
+
+Average validation loss: 0.14038555920124055
+Learning rate: 0.000125
+Train Epoch: 72, Iteration: 0, Enhance Loss: 0.19371089339256287
+Train Epoch: 72, Iteration: 10, Enhance Loss: 0.19157545268535614
+Train Epoch: 72, Iteration: 20, Enhance Loss: 0.17333094775676727
+
+Average validation loss: 0.154160338640213
+Learning rate: 0.000125
+Train Epoch: 73, Iteration: 0, Enhance Loss: 0.19147272408008575
+Train Epoch: 73, Iteration: 10, Enhance Loss: 0.16726090013980865
+Train Epoch: 73, Iteration: 20, Enhance Loss: 0.1856856644153595
+
+Average validation loss: 0.14265990853309632
+Learning rate: 0.000125
+Train Epoch: 74, Iteration: 0, Enhance Loss: 0.1535893976688385
+Train Epoch: 74, Iteration: 10, Enhance Loss: 0.1851319968700409
+Train Epoch: 74, Iteration: 20, Enhance Loss: 0.18147091567516327
+
+Average validation loss: 0.1541001707315445
+Learning rate: 0.000125
+Train Epoch: 75, Iteration: 0, Enhance Loss: 0.18281233310699463
+Train Epoch: 75, Iteration: 10, Enhance Loss: 0.16882336139678955
+Train Epoch: 75, Iteration: 20, Enhance Loss: 0.1529606133699417
+
+Average validation loss: 0.15214575231075286
+Learning rate: 0.000125
+Train Epoch: 76, Iteration: 0, Enhance Loss: 0.17686627805233002
+Train Epoch: 76, Iteration: 10, Enhance Loss: 0.1803935468196869
+Train Epoch: 76, Iteration: 20, Enhance Loss: 0.1553044468164444
+
+Average validation loss: 0.16026827991008757
+Learning rate: 0.000125
+Train Epoch: 77, Iteration: 0, Enhance Loss: 0.201076477766037
+Train Epoch: 77, Iteration: 10, Enhance Loss: 0.17902019619941711
+Train Epoch: 77, Iteration: 20, Enhance Loss: 0.1743161827325821
+
+Average validation loss: 0.15439082086086273
+Learning rate: 0.000125
+Train Epoch: 78, Iteration: 0, Enhance Loss: 0.1617460399866104
+Train Epoch: 78, Iteration: 10, Enhance Loss: 0.16733872890472412
+Train Epoch: 78, Iteration: 20, Enhance Loss: 0.1949440836906433
+
+Average validation loss: 0.16631074845790864
+Learning rate: 0.000125
+Train Epoch: 79, Iteration: 0, Enhance Loss: 0.18334221839904785
+Train Epoch: 79, Iteration: 10, Enhance Loss: 0.21014007925987244
+Train Epoch: 79, Iteration: 20, Enhance Loss: 0.18682841956615448
+
+Average validation loss: 0.15473470985889434
+Learning rate: 6.25e-05
+Train Epoch: 80, Iteration: 0, Enhance Loss: 0.1616186648607254
+Train Epoch: 80, Iteration: 10, Enhance Loss: 0.16030307114124298
+Train Epoch: 80, Iteration: 20, Enhance Loss: 0.18936094641685486
+
+Average validation loss: 0.15674181580543517
+Learning rate: 6.25e-05
+Train Epoch: 81, Iteration: 0, Enhance Loss: 0.1638190597295761
+Train Epoch: 81, Iteration: 10, Enhance Loss: 0.21103422343730927
+Train Epoch: 81, Iteration: 20, Enhance Loss: 0.17375750839710236
+
+Average validation loss: 0.15792546272277833
+Learning rate: 6.25e-05
+Train Epoch: 82, Iteration: 0, Enhance Loss: 0.17253248393535614
+Train Epoch: 82, Iteration: 10, Enhance Loss: 0.1663122922182083
+Train Epoch: 82, Iteration: 20, Enhance Loss: 0.15652094781398773
+
+Average validation loss: 0.14625329673290252
+Learning rate: 6.25e-05
+Train Epoch: 83, Iteration: 0, Enhance Loss: 0.1704009473323822
+Train Epoch: 83, Iteration: 10, Enhance Loss: 0.160426065325737
+Train Epoch: 83, Iteration: 20, Enhance Loss: 0.17600664496421814
+
+Average validation loss: 0.1496249556541443
+Learning rate: 6.25e-05
+Train Epoch: 84, Iteration: 0, Enhance Loss: 0.14735332131385803
+Train Epoch: 84, Iteration: 10, Enhance Loss: 0.1515927016735077
+Train Epoch: 84, Iteration: 20, Enhance Loss: 0.15957891941070557
+
+Average validation loss: 0.1593856394290924
+Learning rate: 6.25e-05
+Train Epoch: 85, Iteration: 0, Enhance Loss: 0.17917901277542114
+Train Epoch: 85, Iteration: 10, Enhance Loss: 0.13917236030101776
+Train Epoch: 85, Iteration: 20, Enhance Loss: 0.1644875854253769
+
+Average validation loss: 0.14547597765922546
+Learning rate: 6.25e-05
+Train Epoch: 86, Iteration: 0, Enhance Loss: 0.17080345749855042
+Train Epoch: 86, Iteration: 10, Enhance Loss: 0.15879614651203156
+Train Epoch: 86, Iteration: 20, Enhance Loss: 0.1461046040058136
+
+Average validation loss: 0.13336127251386642
+Learning rate: 6.25e-05
+Train Epoch: 87, Iteration: 0, Enhance Loss: 0.19772492349147797
+Train Epoch: 87, Iteration: 10, Enhance Loss: 0.19738037884235382
+Train Epoch: 87, Iteration: 20, Enhance Loss: 0.18293750286102295
+
+Average validation loss: 0.14660734534263611
+Learning rate: 6.25e-05
+Train Epoch: 88, Iteration: 0, Enhance Loss: 0.20577991008758545
+Train Epoch: 88, Iteration: 10, Enhance Loss: 0.1508912295103073
+Train Epoch: 88, Iteration: 20, Enhance Loss: 0.13794347643852234
+
+Average validation loss: 0.14334373474121093
+Learning rate: 6.25e-05
+Train Epoch: 89, Iteration: 0, Enhance Loss: 0.18175868690013885
+Train Epoch: 89, Iteration: 10, Enhance Loss: 0.15977664291858673
+Train Epoch: 89, Iteration: 20, Enhance Loss: 0.14356213808059692
+
+Average validation loss: 0.14472878277301787
+Learning rate: 6.25e-05
+Train Epoch: 90, Iteration: 0, Enhance Loss: 0.19193799793720245
+Train Epoch: 90, Iteration: 10, Enhance Loss: 0.1814914345741272
+Train Epoch: 90, Iteration: 20, Enhance Loss: 0.1778823435306549
+
+Average validation loss: 0.15614035725593567
+Learning rate: 6.25e-05
+Train Epoch: 91, Iteration: 0, Enhance Loss: 0.14185528457164764
+Train Epoch: 91, Iteration: 10, Enhance Loss: 0.16633543372154236
+Train Epoch: 91, Iteration: 20, Enhance Loss: 0.16836018860340118
+
+Average validation loss: 0.1488118439912796
+Learning rate: 6.25e-05
+Train Epoch: 92, Iteration: 0, Enhance Loss: 0.16590562462806702
+Train Epoch: 92, Iteration: 10, Enhance Loss: 0.1612733155488968
+Train Epoch: 92, Iteration: 20, Enhance Loss: 0.1889689862728119
+
+Average validation loss: 0.15367619395256044
+Learning rate: 6.25e-05
+Train Epoch: 93, Iteration: 0, Enhance Loss: 0.194817453622818
+Train Epoch: 93, Iteration: 10, Enhance Loss: 0.15529249608516693
+Train Epoch: 93, Iteration: 20, Enhance Loss: 0.18897584080696106
+
+Average validation loss: 0.14605072736740113
+Learning rate: 6.25e-05
+Train Epoch: 94, Iteration: 0, Enhance Loss: 0.15213808417320251
+Train Epoch: 94, Iteration: 10, Enhance Loss: 0.1632271111011505
+Train Epoch: 94, Iteration: 20, Enhance Loss: 0.20670726895332336
+
+Average validation loss: 0.1466805547475815
+Learning rate: 6.25e-05
+Train Epoch: 95, Iteration: 0, Enhance Loss: 0.18089963495731354
+Train Epoch: 95, Iteration: 10, Enhance Loss: 0.15614399313926697
+Train Epoch: 95, Iteration: 20, Enhance Loss: 0.17944173514842987
+
+Average validation loss: 0.15172187983989716
+Learning rate: 6.25e-05
+Train Epoch: 96, Iteration: 0, Enhance Loss: 0.20386536419391632
+Train Epoch: 96, Iteration: 10, Enhance Loss: 0.2048587054014206
+Train Epoch: 96, Iteration: 20, Enhance Loss: 0.18807843327522278
+
+Average validation loss: 0.1457223564386368
+Learning rate: 6.25e-05
+Train Epoch: 97, Iteration: 0, Enhance Loss: 0.16797661781311035
+Train Epoch: 97, Iteration: 10, Enhance Loss: 0.18898341059684753
+Train Epoch: 97, Iteration: 20, Enhance Loss: 0.16749386489391327
+
+Average validation loss: 0.15344133377075195
+Learning rate: 6.25e-05
+Train Epoch: 98, Iteration: 0, Enhance Loss: 0.1861647516489029
+Train Epoch: 98, Iteration: 10, Enhance Loss: 0.17636483907699585
+Train Epoch: 98, Iteration: 20, Enhance Loss: 0.1745213121175766
+
+Average validation loss: 0.15110264718532562
+Learning rate: 6.25e-05
+Train Epoch: 99, Iteration: 0, Enhance Loss: 0.15990835428237915
+Train Epoch: 99, Iteration: 10, Enhance Loss: 0.2234247475862503
+Train Epoch: 99, Iteration: 20, Enhance Loss: 0.18741612136363983
+
+Average validation loss: 0.14330085515975952
+Learning rate: 3.125e-05
+Train Epoch: 100, Iteration: 0, Enhance Loss: 0.17407391965389252
+Train Epoch: 100, Iteration: 10, Enhance Loss: 0.16375651955604553
+Train Epoch: 100, Iteration: 20, Enhance Loss: 0.1569652557373047
+
+Average validation loss: 0.14422472417354584
+[1;34mwandb[0m: 🚀 View run [33mlyric-pine-40[0m at: [34mhttps://wandb.ai/mpham22-aalborg-university/DL_miniproject/runs/7i7t2g6f[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20241027_114828-7i7t2g6f/logs[0m

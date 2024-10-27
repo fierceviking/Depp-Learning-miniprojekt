@@ -1,0 +1,10 @@
+wandb: Using wandb-core as the SDK backend. Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: mpham22 (mpham22-aalborg-university). Use `wandb login --relogin` to force relogin
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /ceph/home/student.aau.dk/le20fp/deep_learning/mini_project/wandb/run-20241027_114828-7i7t2g6f
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lyric-pine-40
+wandb: ⭐️ View project at https://wandb.ai/mpham22-aalborg-university/DL_miniproject
+wandb: 🚀 View run at https://wandb.ai/mpham22-aalborg-university/DL_miniproject/runs/7i7t2g6f
+/ceph/home/student.aau.dk/le20fp/deep_learning/mini_project/train.py:176: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.decom_net.load_state_dict(torch.load(f'models/DecomNet/Job_{num_test}/DecomNet_trained_{num_test}_{num_epochs}.pt'))  #Change back to num_epochs

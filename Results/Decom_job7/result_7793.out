@@ -1,0 +1,608 @@
+Learning rate: 0.001
+Train Epoch: 0, Iteration: 0, Decom Loss: 0.42923447489738464
+Train Epoch: 0, Iteration: 10, Decom Loss: 0.2805567979812622
+Train Epoch: 0, Iteration: 20, Decom Loss: 0.12974907457828522
+
+Average validation loss: 0.14860554784536362
+Learning rate: 0.001
+Train Epoch: 1, Iteration: 0, Decom Loss: 0.13570474088191986
+Train Epoch: 1, Iteration: 10, Decom Loss: 0.06891348958015442
+Train Epoch: 1, Iteration: 20, Decom Loss: 0.06154613196849823
+
+Average validation loss: 0.0596262626349926
+Learning rate: 0.001
+Train Epoch: 2, Iteration: 0, Decom Loss: 0.08730567991733551
+Train Epoch: 2, Iteration: 10, Decom Loss: 0.09146309643983841
+Train Epoch: 2, Iteration: 20, Decom Loss: 0.05428433045744896
+
+Average validation loss: 0.07648557275533677
+Learning rate: 0.001
+Train Epoch: 3, Iteration: 0, Decom Loss: 0.09305179119110107
+Train Epoch: 3, Iteration: 10, Decom Loss: 0.059547822922468185
+Train Epoch: 3, Iteration: 20, Decom Loss: 0.06681577861309052
+
+Average validation loss: 0.07449566870927811
+Learning rate: 0.001
+Train Epoch: 4, Iteration: 0, Decom Loss: 0.08231840282678604
+Train Epoch: 4, Iteration: 10, Decom Loss: 0.062233954668045044
+Train Epoch: 4, Iteration: 20, Decom Loss: 0.0571160688996315
+
+Average validation loss: 0.07230204492807388
+Learning rate: 0.001
+Train Epoch: 5, Iteration: 0, Decom Loss: 0.07081795483827591
+Train Epoch: 5, Iteration: 10, Decom Loss: 0.07519076019525528
+Train Epoch: 5, Iteration: 20, Decom Loss: 0.06367462128400803
+
+Average validation loss: 0.051135965436697
+Learning rate: 0.001
+Train Epoch: 6, Iteration: 0, Decom Loss: 0.056150831282138824
+Train Epoch: 6, Iteration: 10, Decom Loss: 0.05371853709220886
+Train Epoch: 6, Iteration: 20, Decom Loss: 0.07422200590372086
+
+Average validation loss: 0.051172581315040586
+Learning rate: 0.001
+Train Epoch: 7, Iteration: 0, Decom Loss: 0.05331271141767502
+Train Epoch: 7, Iteration: 10, Decom Loss: 0.06409949064254761
+Train Epoch: 7, Iteration: 20, Decom Loss: 0.045159995555877686
+
+Average validation loss: 0.059523791819810865
+Learning rate: 0.001
+Train Epoch: 8, Iteration: 0, Decom Loss: 0.053156040608882904
+Train Epoch: 8, Iteration: 10, Decom Loss: 0.06912388652563095
+Train Epoch: 8, Iteration: 20, Decom Loss: 0.05834560841321945
+
+Average validation loss: 0.05186795145273208
+Learning rate: 0.001
+Train Epoch: 9, Iteration: 0, Decom Loss: 0.05555034428834915
+Train Epoch: 9, Iteration: 10, Decom Loss: 0.052383869886398315
+Train Epoch: 9, Iteration: 20, Decom Loss: 0.06108267232775688
+
+Average validation loss: 0.048152144998311996
+Learning rate: 0.001
+Train Epoch: 10, Iteration: 0, Decom Loss: 0.06602395325899124
+Train Epoch: 10, Iteration: 10, Decom Loss: 0.05586269497871399
+Train Epoch: 10, Iteration: 20, Decom Loss: 0.04514605179429054
+
+Average validation loss: 0.056259870529174805
+Learning rate: 0.001
+Train Epoch: 11, Iteration: 0, Decom Loss: 0.06450778990983963
+Train Epoch: 11, Iteration: 10, Decom Loss: 0.054478537291288376
+Train Epoch: 11, Iteration: 20, Decom Loss: 0.05859944596886635
+
+Average validation loss: 0.050534515827894214
+Learning rate: 0.001
+Train Epoch: 12, Iteration: 0, Decom Loss: 0.05307033658027649
+Train Epoch: 12, Iteration: 10, Decom Loss: 0.052298806607723236
+Train Epoch: 12, Iteration: 20, Decom Loss: 0.060788773000240326
+
+Average validation loss: 0.06961593627929688
+Learning rate: 0.001
+Train Epoch: 13, Iteration: 0, Decom Loss: 0.07012039422988892
+Train Epoch: 13, Iteration: 10, Decom Loss: 0.0528440997004509
+Train Epoch: 13, Iteration: 20, Decom Loss: 0.05477765202522278
+
+Average validation loss: 0.052066275477409364
+Learning rate: 0.001
+Train Epoch: 14, Iteration: 0, Decom Loss: 0.059100158512592316
+Train Epoch: 14, Iteration: 10, Decom Loss: 0.05267370492219925
+Train Epoch: 14, Iteration: 20, Decom Loss: 0.05506559833884239
+
+Average validation loss: 0.050790107995271686
+Learning rate: 0.001
+Train Epoch: 15, Iteration: 0, Decom Loss: 0.052495554089546204
+Train Epoch: 15, Iteration: 10, Decom Loss: 0.05685557425022125
+Train Epoch: 15, Iteration: 20, Decom Loss: 0.06978344917297363
+
+Average validation loss: 0.05225547701120377
+Learning rate: 0.001
+Train Epoch: 16, Iteration: 0, Decom Loss: 0.06854595988988876
+Train Epoch: 16, Iteration: 10, Decom Loss: 0.06810732930898666
+Train Epoch: 16, Iteration: 20, Decom Loss: 0.05913059040904045
+
+Average validation loss: 0.05261953920125961
+Learning rate: 0.001
+Train Epoch: 17, Iteration: 0, Decom Loss: 0.045449770987033844
+Train Epoch: 17, Iteration: 10, Decom Loss: 0.0690351128578186
+Train Epoch: 17, Iteration: 20, Decom Loss: 0.06957905739545822
+
+Average validation loss: 0.04335264265537262
+Learning rate: 0.001
+Train Epoch: 18, Iteration: 0, Decom Loss: 0.04657341167330742
+Train Epoch: 18, Iteration: 10, Decom Loss: 0.048984725028276443
+Train Epoch: 18, Iteration: 20, Decom Loss: 0.0426657609641552
+
+Average validation loss: 0.04151463434100151
+Learning rate: 0.001
+Train Epoch: 19, Iteration: 0, Decom Loss: 0.043407510966062546
+Train Epoch: 19, Iteration: 10, Decom Loss: 0.046499911695718765
+Train Epoch: 19, Iteration: 20, Decom Loss: 0.04487386345863342
+
+Average validation loss: 0.0334459237754345
+Learning rate: 0.0005
+Train Epoch: 20, Iteration: 0, Decom Loss: 0.03670542314648628
+Train Epoch: 20, Iteration: 10, Decom Loss: 0.03543822839856148
+Train Epoch: 20, Iteration: 20, Decom Loss: 0.03060469590127468
+
+Average validation loss: 0.03229811750352383
+Learning rate: 0.0005
+Train Epoch: 21, Iteration: 0, Decom Loss: 0.02435321733355522
+Train Epoch: 21, Iteration: 10, Decom Loss: 0.04069679602980614
+Train Epoch: 21, Iteration: 20, Decom Loss: 0.03792374208569527
+
+Average validation loss: 0.02849632278084755
+Learning rate: 0.0005
+Train Epoch: 22, Iteration: 0, Decom Loss: 0.026964278891682625
+Train Epoch: 22, Iteration: 10, Decom Loss: 0.04232689365744591
+Train Epoch: 22, Iteration: 20, Decom Loss: 0.04084409028291702
+
+Average validation loss: 0.036329363286495206
+Learning rate: 0.0005
+Train Epoch: 23, Iteration: 0, Decom Loss: 0.03630026802420616
+Train Epoch: 23, Iteration: 10, Decom Loss: 0.030528085306286812
+Train Epoch: 23, Iteration: 20, Decom Loss: 0.03935633599758148
+
+Average validation loss: 0.02803612984716892
+Learning rate: 0.0005
+Train Epoch: 24, Iteration: 0, Decom Loss: 0.03526034206151962
+Train Epoch: 24, Iteration: 10, Decom Loss: 0.0387977659702301
+Train Epoch: 24, Iteration: 20, Decom Loss: 0.03363987058401108
+
+Average validation loss: 0.02763398364186287
+Learning rate: 0.0005
+Train Epoch: 25, Iteration: 0, Decom Loss: 0.026620155200362206
+Train Epoch: 25, Iteration: 10, Decom Loss: 0.030154956504702568
+Train Epoch: 25, Iteration: 20, Decom Loss: 0.043939728289842606
+
+Average validation loss: 0.031488515064120294
+Learning rate: 0.0005
+Train Epoch: 26, Iteration: 0, Decom Loss: 0.03563074767589569
+Train Epoch: 26, Iteration: 10, Decom Loss: 0.031496841460466385
+Train Epoch: 26, Iteration: 20, Decom Loss: 0.028962666168808937
+
+Average validation loss: 0.03461931124329567
+Learning rate: 0.0005
+Train Epoch: 27, Iteration: 0, Decom Loss: 0.03667924925684929
+Train Epoch: 27, Iteration: 10, Decom Loss: 0.03668327257037163
+Train Epoch: 27, Iteration: 20, Decom Loss: 0.028716884553432465
+
+Average validation loss: 0.024086789041757584
+Learning rate: 0.0005
+Train Epoch: 28, Iteration: 0, Decom Loss: 0.021830027922987938
+Train Epoch: 28, Iteration: 10, Decom Loss: 0.03022332303225994
+Train Epoch: 28, Iteration: 20, Decom Loss: 0.027228593826293945
+
+Average validation loss: 0.02490072287619114
+Learning rate: 0.0005
+Train Epoch: 29, Iteration: 0, Decom Loss: 0.032398343086242676
+Train Epoch: 29, Iteration: 10, Decom Loss: 0.02812931500375271
+Train Epoch: 29, Iteration: 20, Decom Loss: 0.03071991726756096
+
+Average validation loss: 0.02460080087184906
+Learning rate: 0.0005
+Train Epoch: 30, Iteration: 0, Decom Loss: 0.023764852434396744
+Train Epoch: 30, Iteration: 10, Decom Loss: 0.028047366067767143
+Train Epoch: 30, Iteration: 20, Decom Loss: 0.028986265882849693
+
+Average validation loss: 0.03872752413153648
+Learning rate: 0.0005
+Train Epoch: 31, Iteration: 0, Decom Loss: 0.03940679132938385
+Train Epoch: 31, Iteration: 10, Decom Loss: 0.048336535692214966
+Train Epoch: 31, Iteration: 20, Decom Loss: 0.027964046224951744
+
+Average validation loss: 0.027289210259914397
+Learning rate: 0.0005
+Train Epoch: 32, Iteration: 0, Decom Loss: 0.02572733908891678
+Train Epoch: 32, Iteration: 10, Decom Loss: 0.03642721474170685
+Train Epoch: 32, Iteration: 20, Decom Loss: 0.020738106220960617
+
+Average validation loss: 0.02646959386765957
+Learning rate: 0.0005
+Train Epoch: 33, Iteration: 0, Decom Loss: 0.03132528066635132
+Train Epoch: 33, Iteration: 10, Decom Loss: 0.03128894791007042
+Train Epoch: 33, Iteration: 20, Decom Loss: 0.030268674716353416
+
+Average validation loss: 0.027900603041052817
+Learning rate: 0.0005
+Train Epoch: 34, Iteration: 0, Decom Loss: 0.03267589956521988
+Train Epoch: 34, Iteration: 10, Decom Loss: 0.026422692462801933
+Train Epoch: 34, Iteration: 20, Decom Loss: 0.02381419576704502
+
+Average validation loss: 0.027114837244153023
+Learning rate: 0.0005
+Train Epoch: 35, Iteration: 0, Decom Loss: 0.028307974338531494
+Train Epoch: 35, Iteration: 10, Decom Loss: 0.031000232324004173
+Train Epoch: 35, Iteration: 20, Decom Loss: 0.03876486048102379
+
+Average validation loss: 0.024263735860586166
+Learning rate: 0.0005
+Train Epoch: 36, Iteration: 0, Decom Loss: 0.02099779061973095
+Train Epoch: 36, Iteration: 10, Decom Loss: 0.029953202232718468
+Train Epoch: 36, Iteration: 20, Decom Loss: 0.021226076409220695
+
+Average validation loss: 0.02366550639271736
+Learning rate: 0.0005
+Train Epoch: 37, Iteration: 0, Decom Loss: 0.02718818373978138
+Train Epoch: 37, Iteration: 10, Decom Loss: 0.02633027359843254
+Train Epoch: 37, Iteration: 20, Decom Loss: 0.030649343505501747
+
+Average validation loss: 0.04224274531006813
+Learning rate: 0.0005
+Train Epoch: 38, Iteration: 0, Decom Loss: 0.04504929110407829
+Train Epoch: 38, Iteration: 10, Decom Loss: 0.029401861131191254
+Train Epoch: 38, Iteration: 20, Decom Loss: 0.03312782570719719
+
+Average validation loss: 0.031138629466295243
+Learning rate: 0.0005
+Train Epoch: 39, Iteration: 0, Decom Loss: 0.022936103865504265
+Train Epoch: 39, Iteration: 10, Decom Loss: 0.027831191197037697
+Train Epoch: 39, Iteration: 20, Decom Loss: 0.021159183233976364
+
+Average validation loss: 0.02353147715330124
+Learning rate: 0.00025
+Train Epoch: 40, Iteration: 0, Decom Loss: 0.027272481471300125
+Train Epoch: 40, Iteration: 10, Decom Loss: 0.025774409994482994
+Train Epoch: 40, Iteration: 20, Decom Loss: 0.02363325096666813
+
+Average validation loss: 0.021404822170734406
+Learning rate: 0.00025
+Train Epoch: 41, Iteration: 0, Decom Loss: 0.025206828489899635
+Train Epoch: 41, Iteration: 10, Decom Loss: 0.026409942656755447
+Train Epoch: 41, Iteration: 20, Decom Loss: 0.02505272626876831
+
+Average validation loss: 0.023237117007374762
+Learning rate: 0.00025
+Train Epoch: 42, Iteration: 0, Decom Loss: 0.023103218525648117
+Train Epoch: 42, Iteration: 10, Decom Loss: 0.020482171326875687
+Train Epoch: 42, Iteration: 20, Decom Loss: 0.020400477573275566
+
+Average validation loss: 0.019252967834472657
+Learning rate: 0.00025
+Train Epoch: 43, Iteration: 0, Decom Loss: 0.024372849613428116
+Train Epoch: 43, Iteration: 10, Decom Loss: 0.023122237995266914
+Train Epoch: 43, Iteration: 20, Decom Loss: 0.02085505798459053
+
+Average validation loss: 0.020872477814555167
+Learning rate: 0.00025
+Train Epoch: 44, Iteration: 0, Decom Loss: 0.016256798058748245
+Train Epoch: 44, Iteration: 10, Decom Loss: 0.01799960993230343
+Train Epoch: 44, Iteration: 20, Decom Loss: 0.021192355081439018
+
+Average validation loss: 0.020978103578090667
+Learning rate: 0.00025
+Train Epoch: 45, Iteration: 0, Decom Loss: 0.02302788756787777
+Train Epoch: 45, Iteration: 10, Decom Loss: 0.021181145682930946
+Train Epoch: 45, Iteration: 20, Decom Loss: 0.02143643982708454
+
+Average validation loss: 0.018909985199570656
+Learning rate: 0.00025
+Train Epoch: 46, Iteration: 0, Decom Loss: 0.02292947843670845
+Train Epoch: 46, Iteration: 10, Decom Loss: 0.019167393445968628
+Train Epoch: 46, Iteration: 20, Decom Loss: 0.03175638988614082
+
+Average validation loss: 0.018353835493326188
+Learning rate: 0.00025
+Train Epoch: 47, Iteration: 0, Decom Loss: 0.03030434623360634
+Train Epoch: 47, Iteration: 10, Decom Loss: 0.020899277180433273
+Train Epoch: 47, Iteration: 20, Decom Loss: 0.022279756143689156
+
+Average validation loss: 0.019394840486347674
+Learning rate: 0.00025
+Train Epoch: 48, Iteration: 0, Decom Loss: 0.025014610961079597
+Train Epoch: 48, Iteration: 10, Decom Loss: 0.024431049823760986
+Train Epoch: 48, Iteration: 20, Decom Loss: 0.017161501571536064
+
+Average validation loss: 0.018396294862031936
+Learning rate: 0.00025
+Train Epoch: 49, Iteration: 0, Decom Loss: 0.020652616396546364
+Train Epoch: 49, Iteration: 10, Decom Loss: 0.016506560146808624
+Train Epoch: 49, Iteration: 20, Decom Loss: 0.021547436714172363
+
+Average validation loss: 0.017230835929512977
+Learning rate: 0.00025
+Train Epoch: 50, Iteration: 0, Decom Loss: 0.016404256224632263
+Train Epoch: 50, Iteration: 10, Decom Loss: 0.020349886268377304
+Train Epoch: 50, Iteration: 20, Decom Loss: 0.019415179267525673
+
+Average validation loss: 0.017646164074540137
+Learning rate: 0.00025
+Train Epoch: 51, Iteration: 0, Decom Loss: 0.016935043036937714
+Train Epoch: 51, Iteration: 10, Decom Loss: 0.021768081933259964
+Train Epoch: 51, Iteration: 20, Decom Loss: 0.027212543413043022
+
+Average validation loss: 0.016631266847252846
+Learning rate: 0.00025
+Train Epoch: 52, Iteration: 0, Decom Loss: 0.020035747438669205
+Train Epoch: 52, Iteration: 10, Decom Loss: 0.017407003790140152
+Train Epoch: 52, Iteration: 20, Decom Loss: 0.02187558077275753
+
+Average validation loss: 0.018844225257635117
+Learning rate: 0.00025
+Train Epoch: 53, Iteration: 0, Decom Loss: 0.016861021518707275
+Train Epoch: 53, Iteration: 10, Decom Loss: 0.023361235857009888
+Train Epoch: 53, Iteration: 20, Decom Loss: 0.022481590509414673
+
+Average validation loss: 0.020036486722528935
+Learning rate: 0.00025
+Train Epoch: 54, Iteration: 0, Decom Loss: 0.024657314643263817
+Train Epoch: 54, Iteration: 10, Decom Loss: 0.02122422493994236
+Train Epoch: 54, Iteration: 20, Decom Loss: 0.015040011145174503
+
+Average validation loss: 0.01794842295348644
+Learning rate: 0.00025
+Train Epoch: 55, Iteration: 0, Decom Loss: 0.016307156533002853
+Train Epoch: 55, Iteration: 10, Decom Loss: 0.023057807236909866
+Train Epoch: 55, Iteration: 20, Decom Loss: 0.01614132709801197
+
+Average validation loss: 0.018575071170926095
+Learning rate: 0.00025
+Train Epoch: 56, Iteration: 0, Decom Loss: 0.02316608838737011
+Train Epoch: 56, Iteration: 10, Decom Loss: 0.02069011516869068
+Train Epoch: 56, Iteration: 20, Decom Loss: 0.0184209905564785
+
+Average validation loss: 0.015171240642666816
+Learning rate: 0.00025
+Train Epoch: 57, Iteration: 0, Decom Loss: 0.02057059481739998
+Train Epoch: 57, Iteration: 10, Decom Loss: 0.019161932170391083
+Train Epoch: 57, Iteration: 20, Decom Loss: 0.017469774931669235
+
+Average validation loss: 0.01835695542395115
+Learning rate: 0.00025
+Train Epoch: 58, Iteration: 0, Decom Loss: 0.017890315502882004
+Train Epoch: 58, Iteration: 10, Decom Loss: 0.01894628070294857
+Train Epoch: 58, Iteration: 20, Decom Loss: 0.02025245875120163
+
+Average validation loss: 0.01797768846154213
+Learning rate: 0.00025
+Train Epoch: 59, Iteration: 0, Decom Loss: 0.016488267108798027
+Train Epoch: 59, Iteration: 10, Decom Loss: 0.01877664588391781
+Train Epoch: 59, Iteration: 20, Decom Loss: 0.02237837389111519
+
+Average validation loss: 0.01923989914357662
+Learning rate: 0.000125
+Train Epoch: 60, Iteration: 0, Decom Loss: 0.0225833710283041
+Train Epoch: 60, Iteration: 10, Decom Loss: 0.013636866584420204
+Train Epoch: 60, Iteration: 20, Decom Loss: 0.01450466550886631
+
+Average validation loss: 0.012780100293457507
+Learning rate: 0.000125
+Train Epoch: 61, Iteration: 0, Decom Loss: 0.012263711541891098
+Train Epoch: 61, Iteration: 10, Decom Loss: 0.014088847674429417
+Train Epoch: 61, Iteration: 20, Decom Loss: 0.014237035997211933
+
+Average validation loss: 0.013877924531698227
+Learning rate: 0.000125
+Train Epoch: 62, Iteration: 0, Decom Loss: 0.012796137481927872
+Train Epoch: 62, Iteration: 10, Decom Loss: 0.01373198814690113
+Train Epoch: 62, Iteration: 20, Decom Loss: 0.014701194129884243
+
+Average validation loss: 0.01382693313062191
+Learning rate: 0.000125
+Train Epoch: 63, Iteration: 0, Decom Loss: 0.014100007712841034
+Train Epoch: 63, Iteration: 10, Decom Loss: 0.01433381624519825
+Train Epoch: 63, Iteration: 20, Decom Loss: 0.01426213514059782
+
+Average validation loss: 0.012584455125033856
+Learning rate: 0.000125
+Train Epoch: 64, Iteration: 0, Decom Loss: 0.016644438728690147
+Train Epoch: 64, Iteration: 10, Decom Loss: 0.011149686761200428
+Train Epoch: 64, Iteration: 20, Decom Loss: 0.01277365442365408
+
+Average validation loss: 0.014426649361848832
+Learning rate: 0.000125
+Train Epoch: 65, Iteration: 0, Decom Loss: 0.01627989672124386
+Train Epoch: 65, Iteration: 10, Decom Loss: 0.012144469656050205
+Train Epoch: 65, Iteration: 20, Decom Loss: 0.015295569784939289
+
+Average validation loss: 0.013413185626268387
+Learning rate: 0.000125
+Train Epoch: 66, Iteration: 0, Decom Loss: 0.015397869050502777
+Train Epoch: 66, Iteration: 10, Decom Loss: 0.011622421443462372
+Train Epoch: 66, Iteration: 20, Decom Loss: 0.014036253094673157
+
+Average validation loss: 0.014069489389657974
+Learning rate: 0.000125
+Train Epoch: 67, Iteration: 0, Decom Loss: 0.01618705689907074
+Train Epoch: 67, Iteration: 10, Decom Loss: 0.017006518319249153
+Train Epoch: 67, Iteration: 20, Decom Loss: 0.013524984009563923
+
+Average validation loss: 0.013923412933945657
+Learning rate: 0.000125
+Train Epoch: 68, Iteration: 0, Decom Loss: 0.016652658581733704
+Train Epoch: 68, Iteration: 10, Decom Loss: 0.012180278077721596
+Train Epoch: 68, Iteration: 20, Decom Loss: 0.014300696551799774
+
+Average validation loss: 0.012597954459488392
+Learning rate: 0.000125
+Train Epoch: 69, Iteration: 0, Decom Loss: 0.013731702230870724
+Train Epoch: 69, Iteration: 10, Decom Loss: 0.014658007770776749
+Train Epoch: 69, Iteration: 20, Decom Loss: 0.014494448900222778
+
+Average validation loss: 0.01338730864226818
+Learning rate: 0.000125
+Train Epoch: 70, Iteration: 0, Decom Loss: 0.014646615833044052
+Train Epoch: 70, Iteration: 10, Decom Loss: 0.013955574482679367
+Train Epoch: 70, Iteration: 20, Decom Loss: 0.0147692346945405
+
+Average validation loss: 0.012728326581418514
+Learning rate: 0.000125
+Train Epoch: 71, Iteration: 0, Decom Loss: 0.010204826481640339
+Train Epoch: 71, Iteration: 10, Decom Loss: 0.014879519119858742
+Train Epoch: 71, Iteration: 20, Decom Loss: 0.012946074828505516
+
+Average validation loss: 0.012024321034550667
+Learning rate: 0.000125
+Train Epoch: 72, Iteration: 0, Decom Loss: 0.015376408584415913
+Train Epoch: 72, Iteration: 10, Decom Loss: 0.012937513180077076
+Train Epoch: 72, Iteration: 20, Decom Loss: 0.011935891583561897
+
+Average validation loss: 0.012168287113308907
+Learning rate: 0.000125
+Train Epoch: 73, Iteration: 0, Decom Loss: 0.015124805271625519
+Train Epoch: 73, Iteration: 10, Decom Loss: 0.01227090135216713
+Train Epoch: 73, Iteration: 20, Decom Loss: 0.013851804658770561
+
+Average validation loss: 0.012670314311981202
+Learning rate: 0.000125
+Train Epoch: 74, Iteration: 0, Decom Loss: 0.01566089503467083
+Train Epoch: 74, Iteration: 10, Decom Loss: 0.015099870972335339
+Train Epoch: 74, Iteration: 20, Decom Loss: 0.01686866767704487
+
+Average validation loss: 0.013393963314592838
+Learning rate: 0.000125
+Train Epoch: 75, Iteration: 0, Decom Loss: 0.01524747721850872
+Train Epoch: 75, Iteration: 10, Decom Loss: 0.013509992510080338
+Train Epoch: 75, Iteration: 20, Decom Loss: 0.012838073074817657
+
+Average validation loss: 0.0124869454652071
+Learning rate: 0.000125
+Train Epoch: 76, Iteration: 0, Decom Loss: 0.014269208535552025
+Train Epoch: 76, Iteration: 10, Decom Loss: 0.01249319314956665
+Train Epoch: 76, Iteration: 20, Decom Loss: 0.013412660919129848
+
+Average validation loss: 0.013794736564159393
+Learning rate: 0.000125
+Train Epoch: 77, Iteration: 0, Decom Loss: 0.014216672629117966
+Train Epoch: 77, Iteration: 10, Decom Loss: 0.01446007750928402
+Train Epoch: 77, Iteration: 20, Decom Loss: 0.015352195128798485
+
+Average validation loss: 0.012874011509120464
+Learning rate: 0.000125
+Train Epoch: 78, Iteration: 0, Decom Loss: 0.01360076293349266
+Train Epoch: 78, Iteration: 10, Decom Loss: 0.011038943193852901
+Train Epoch: 78, Iteration: 20, Decom Loss: 0.0139482282102108
+
+Average validation loss: 0.013574587181210518
+Learning rate: 0.000125
+Train Epoch: 79, Iteration: 0, Decom Loss: 0.01727084070444107
+Train Epoch: 79, Iteration: 10, Decom Loss: 0.015144459903240204
+Train Epoch: 79, Iteration: 20, Decom Loss: 0.014052367769181728
+
+Average validation loss: 0.013036354631185531
+Learning rate: 6.25e-05
+Train Epoch: 80, Iteration: 0, Decom Loss: 0.012313200160861015
+Train Epoch: 80, Iteration: 10, Decom Loss: 0.010992040857672691
+Train Epoch: 80, Iteration: 20, Decom Loss: 0.013429412618279457
+
+Average validation loss: 0.011677572317421437
+Learning rate: 6.25e-05
+Train Epoch: 81, Iteration: 0, Decom Loss: 0.01485003624111414
+Train Epoch: 81, Iteration: 10, Decom Loss: 0.013010812923312187
+Train Epoch: 81, Iteration: 20, Decom Loss: 0.01240148302167654
+
+Average validation loss: 0.011908833868801594
+Learning rate: 6.25e-05
+Train Epoch: 82, Iteration: 0, Decom Loss: 0.011986158788204193
+Train Epoch: 82, Iteration: 10, Decom Loss: 0.012196843512356281
+Train Epoch: 82, Iteration: 20, Decom Loss: 0.013779214583337307
+
+Average validation loss: 0.011934531107544898
+Learning rate: 6.25e-05
+Train Epoch: 83, Iteration: 0, Decom Loss: 0.010750720277428627
+Train Epoch: 83, Iteration: 10, Decom Loss: 0.010942194610834122
+Train Epoch: 83, Iteration: 20, Decom Loss: 0.013853717595338821
+
+Average validation loss: 0.01164530199021101
+Learning rate: 6.25e-05
+Train Epoch: 84, Iteration: 0, Decom Loss: 0.012147083878517151
+Train Epoch: 84, Iteration: 10, Decom Loss: 0.01401419099420309
+Train Epoch: 84, Iteration: 20, Decom Loss: 0.013325114734470844
+
+Average validation loss: 0.011902613937854767
+Learning rate: 6.25e-05
+Train Epoch: 85, Iteration: 0, Decom Loss: 0.013706997968256474
+Train Epoch: 85, Iteration: 10, Decom Loss: 0.011456970125436783
+Train Epoch: 85, Iteration: 20, Decom Loss: 0.012680700980126858
+
+Average validation loss: 0.012505710683763027
+Learning rate: 6.25e-05
+Train Epoch: 86, Iteration: 0, Decom Loss: 0.011127451434731483
+Train Epoch: 86, Iteration: 10, Decom Loss: 0.01360948383808136
+Train Epoch: 86, Iteration: 20, Decom Loss: 0.012153347954154015
+
+Average validation loss: 0.01157959494739771
+Learning rate: 6.25e-05
+Train Epoch: 87, Iteration: 0, Decom Loss: 0.014702311716973782
+Train Epoch: 87, Iteration: 10, Decom Loss: 0.014211541973054409
+Train Epoch: 87, Iteration: 20, Decom Loss: 0.011212978512048721
+
+Average validation loss: 0.011664028465747833
+Learning rate: 6.25e-05
+Train Epoch: 88, Iteration: 0, Decom Loss: 0.011718171648681164
+Train Epoch: 88, Iteration: 10, Decom Loss: 0.012725564651191235
+Train Epoch: 88, Iteration: 20, Decom Loss: 0.012290275655686855
+
+Average validation loss: 0.01231738943606615
+Learning rate: 6.25e-05
+Train Epoch: 89, Iteration: 0, Decom Loss: 0.014089733362197876
+Train Epoch: 89, Iteration: 10, Decom Loss: 0.012257776223123074
+Train Epoch: 89, Iteration: 20, Decom Loss: 0.010635845363140106
+
+Average validation loss: 0.01305845808237791
+Learning rate: 6.25e-05
+Train Epoch: 90, Iteration: 0, Decom Loss: 0.0125426622107625
+Train Epoch: 90, Iteration: 10, Decom Loss: 0.014152087271213531
+Train Epoch: 90, Iteration: 20, Decom Loss: 0.011235548183321953
+
+Average validation loss: 0.011012040264904498
+Learning rate: 6.25e-05
+Train Epoch: 91, Iteration: 0, Decom Loss: 0.01094528753310442
+Train Epoch: 91, Iteration: 10, Decom Loss: 0.013178491033613682
+Train Epoch: 91, Iteration: 20, Decom Loss: 0.010388473980128765
+
+Average validation loss: 0.011165829561650752
+Learning rate: 6.25e-05
+Train Epoch: 92, Iteration: 0, Decom Loss: 0.012685379013419151
+Train Epoch: 92, Iteration: 10, Decom Loss: 0.013769654557108879
+Train Epoch: 92, Iteration: 20, Decom Loss: 0.01169777475297451
+
+Average validation loss: 0.011347915045917034
+Learning rate: 6.25e-05
+Train Epoch: 93, Iteration: 0, Decom Loss: 0.01261009369045496
+Train Epoch: 93, Iteration: 10, Decom Loss: 0.01281531061977148
+Train Epoch: 93, Iteration: 20, Decom Loss: 0.01680605672299862
+
+Average validation loss: 0.011486469767987728
+Learning rate: 6.25e-05
+Train Epoch: 94, Iteration: 0, Decom Loss: 0.011411323212087154
+Train Epoch: 94, Iteration: 10, Decom Loss: 0.012862781062722206
+Train Epoch: 94, Iteration: 20, Decom Loss: 0.012461533769965172
+
+Average validation loss: 0.011265848577022553
+Learning rate: 6.25e-05
+Train Epoch: 95, Iteration: 0, Decom Loss: 0.010359467938542366
+Train Epoch: 95, Iteration: 10, Decom Loss: 0.012013860046863556
+Train Epoch: 95, Iteration: 20, Decom Loss: 0.012401904910802841
+
+Average validation loss: 0.011227807030081749
+Learning rate: 6.25e-05
+Train Epoch: 96, Iteration: 0, Decom Loss: 0.014679369516670704
+Train Epoch: 96, Iteration: 10, Decom Loss: 0.01518575195223093
+Train Epoch: 96, Iteration: 20, Decom Loss: 0.012143382802605629
+
+Average validation loss: 0.010164202004671097
+Learning rate: 6.25e-05
+Train Epoch: 97, Iteration: 0, Decom Loss: 0.013790979981422424
+Train Epoch: 97, Iteration: 10, Decom Loss: 0.013128419406712055
+Train Epoch: 97, Iteration: 20, Decom Loss: 0.010956541635096073
+
+Average validation loss: 0.01080479584634304
+Learning rate: 6.25e-05
+Train Epoch: 98, Iteration: 0, Decom Loss: 0.011162720620632172
+Train Epoch: 98, Iteration: 10, Decom Loss: 0.013211757875978947
+Train Epoch: 98, Iteration: 20, Decom Loss: 0.010261253453791142
+
+Average validation loss: 0.012330691702663899
+Learning rate: 6.25e-05
+Train Epoch: 99, Iteration: 0, Decom Loss: 0.013714835047721863
+Train Epoch: 99, Iteration: 10, Decom Loss: 0.014881393872201443
+Train Epoch: 99, Iteration: 20, Decom Loss: 0.01170386839658022
+
+Average validation loss: 0.010645543597638607
+Learning rate: 3.125e-05
+Train Epoch: 100, Iteration: 0, Decom Loss: 0.011204167269170284
+Train Epoch: 100, Iteration: 10, Decom Loss: 0.011196312494575977
+Train Epoch: 100, Iteration: 20, Decom Loss: 0.012017056345939636
+
+Average validation loss: 0.010940137691795826
+[1;34mwandb[0m: 🚀 View run [33mclean-planet-39[0m at: [34mhttps://wandb.ai/mpham22-aalborg-university/DL_miniproject/runs/mdtv5r2f[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20241027_112024-mdtv5r2f/logs[0m

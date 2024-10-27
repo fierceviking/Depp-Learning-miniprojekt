@@ -1,0 +1,308 @@
+Learning rate: 0.001
+Train Epoch: 0, Iteration: 0, Finetune Loss: 0.028854548931121826
+Train Epoch: 0, Iteration: 10, Finetune Loss: 0.16479843854904175
+Train Epoch: 0, Iteration: 20, Finetune Loss: 0.10462642461061478
+
+Average validation loss: 0.08170865476131439
+Learning rate: 0.001
+Train Epoch: 1, Iteration: 0, Finetune Loss: 0.08253559470176697
+Train Epoch: 1, Iteration: 10, Finetune Loss: 0.07213371992111206
+Train Epoch: 1, Iteration: 20, Finetune Loss: 0.06179767847061157
+
+Average validation loss: 0.060313984751701355
+Learning rate: 0.001
+Train Epoch: 2, Iteration: 0, Finetune Loss: 0.06770721077919006
+Train Epoch: 2, Iteration: 10, Finetune Loss: 0.05795837193727493
+Train Epoch: 2, Iteration: 20, Finetune Loss: 0.05635928362607956
+
+Average validation loss: 0.04486898109316826
+Learning rate: 0.001
+Train Epoch: 3, Iteration: 0, Finetune Loss: 0.06994793564081192
+Train Epoch: 3, Iteration: 10, Finetune Loss: 0.04923665523529053
+Train Epoch: 3, Iteration: 20, Finetune Loss: 0.04928206652402878
+
+Average validation loss: 0.04683894887566566
+Learning rate: 0.001
+Train Epoch: 4, Iteration: 0, Finetune Loss: 0.04831376671791077
+Train Epoch: 4, Iteration: 10, Finetune Loss: 0.05257895588874817
+Train Epoch: 4, Iteration: 20, Finetune Loss: 0.056282490491867065
+
+Average validation loss: 0.05275717154145241
+Learning rate: 0.001
+Train Epoch: 5, Iteration: 0, Finetune Loss: 0.05420926213264465
+Train Epoch: 5, Iteration: 10, Finetune Loss: 0.05941915512084961
+Train Epoch: 5, Iteration: 20, Finetune Loss: 0.05106480419635773
+
+Average validation loss: 0.05509611740708351
+Learning rate: 0.001
+Train Epoch: 6, Iteration: 0, Finetune Loss: 0.056265972554683685
+Train Epoch: 6, Iteration: 10, Finetune Loss: 0.04817279428243637
+Train Epoch: 6, Iteration: 20, Finetune Loss: 0.054475415498018265
+
+Average validation loss: 0.046053270995616916
+Learning rate: 0.001
+Train Epoch: 7, Iteration: 0, Finetune Loss: 0.052604444324970245
+Train Epoch: 7, Iteration: 10, Finetune Loss: 0.05231418460607529
+Train Epoch: 7, Iteration: 20, Finetune Loss: 0.039587825536727905
+
+Average validation loss: 0.042282698303461076
+Learning rate: 0.001
+Train Epoch: 8, Iteration: 0, Finetune Loss: 0.04490259289741516
+Train Epoch: 8, Iteration: 10, Finetune Loss: 0.048364780843257904
+Train Epoch: 8, Iteration: 20, Finetune Loss: 0.05120227485895157
+
+Average validation loss: 0.03841846883296966
+Learning rate: 0.001
+Train Epoch: 9, Iteration: 0, Finetune Loss: 0.04269525036215782
+Train Epoch: 9, Iteration: 10, Finetune Loss: 0.0516243539750576
+Train Epoch: 9, Iteration: 20, Finetune Loss: 0.04821322113275528
+
+Average validation loss: 0.04344469010829925
+Learning rate: 0.001
+Train Epoch: 10, Iteration: 0, Finetune Loss: 0.05080680549144745
+Train Epoch: 10, Iteration: 10, Finetune Loss: 0.040361225605010986
+Train Epoch: 10, Iteration: 20, Finetune Loss: 0.04468283802270889
+
+Average validation loss: 0.04565473422408104
+Learning rate: 0.001
+Train Epoch: 11, Iteration: 0, Finetune Loss: 0.05234939977526665
+Train Epoch: 11, Iteration: 10, Finetune Loss: 0.03933405876159668
+Train Epoch: 11, Iteration: 20, Finetune Loss: 0.04356930032372475
+
+Average validation loss: 0.03400915712118149
+Learning rate: 0.001
+Train Epoch: 12, Iteration: 0, Finetune Loss: 0.03820187970995903
+Train Epoch: 12, Iteration: 10, Finetune Loss: 0.04547790437936783
+Train Epoch: 12, Iteration: 20, Finetune Loss: 0.0499725267291069
+
+Average validation loss: 0.042043516784906386
+Learning rate: 0.001
+Train Epoch: 13, Iteration: 0, Finetune Loss: 0.04655202478170395
+Train Epoch: 13, Iteration: 10, Finetune Loss: 0.044625647366046906
+Train Epoch: 13, Iteration: 20, Finetune Loss: 0.049793876707553864
+
+Average validation loss: 0.0387433871626854
+Learning rate: 0.001
+Train Epoch: 14, Iteration: 0, Finetune Loss: 0.044797688722610474
+Train Epoch: 14, Iteration: 10, Finetune Loss: 0.053095392882823944
+Train Epoch: 14, Iteration: 20, Finetune Loss: 0.04958245903253555
+
+Average validation loss: 0.04865701422095299
+Learning rate: 0.001
+Train Epoch: 15, Iteration: 0, Finetune Loss: 0.045332010835409164
+Train Epoch: 15, Iteration: 10, Finetune Loss: 0.038222528994083405
+Train Epoch: 15, Iteration: 20, Finetune Loss: 0.034474052488803864
+
+Average validation loss: 0.03341060429811478
+Learning rate: 0.001
+Train Epoch: 16, Iteration: 0, Finetune Loss: 0.04049372300505638
+Train Epoch: 16, Iteration: 10, Finetune Loss: 0.0568130686879158
+Train Epoch: 16, Iteration: 20, Finetune Loss: 0.05617580562829971
+
+Average validation loss: 0.04741997271776199
+Learning rate: 0.001
+Train Epoch: 17, Iteration: 0, Finetune Loss: 0.049132853746414185
+Train Epoch: 17, Iteration: 10, Finetune Loss: 0.05089639127254486
+Train Epoch: 17, Iteration: 20, Finetune Loss: 0.03695493936538696
+
+Average validation loss: 0.03743631467223167
+Learning rate: 0.001
+Train Epoch: 18, Iteration: 0, Finetune Loss: 0.04103916883468628
+Train Epoch: 18, Iteration: 10, Finetune Loss: 0.03572176396846771
+Train Epoch: 18, Iteration: 20, Finetune Loss: 0.03443067520856857
+
+Average validation loss: 0.03589248955249787
+Learning rate: 0.001
+Train Epoch: 19, Iteration: 0, Finetune Loss: 0.03963927924633026
+Train Epoch: 19, Iteration: 10, Finetune Loss: 0.03677097707986832
+Train Epoch: 19, Iteration: 20, Finetune Loss: 0.05434737354516983
+
+Average validation loss: 0.03912054002285004
+Learning rate: 0.0005
+Train Epoch: 20, Iteration: 0, Finetune Loss: 0.038466475903987885
+Train Epoch: 20, Iteration: 10, Finetune Loss: 0.03932791203260422
+Train Epoch: 20, Iteration: 20, Finetune Loss: 0.0349743589758873
+
+Average validation loss: 0.03188929632306099
+Learning rate: 0.0005
+Train Epoch: 21, Iteration: 0, Finetune Loss: 0.035274382680654526
+Train Epoch: 21, Iteration: 10, Finetune Loss: 0.03622505068778992
+Train Epoch: 21, Iteration: 20, Finetune Loss: 0.035514432936906815
+
+Average validation loss: 0.03084680177271366
+Learning rate: 0.0005
+Train Epoch: 22, Iteration: 0, Finetune Loss: 0.03295690938830376
+Train Epoch: 22, Iteration: 10, Finetune Loss: 0.037307582795619965
+Train Epoch: 22, Iteration: 20, Finetune Loss: 0.03562095761299133
+
+Average validation loss: 0.030338336527347565
+Learning rate: 0.0005
+Train Epoch: 23, Iteration: 0, Finetune Loss: 0.03469734266400337
+Train Epoch: 23, Iteration: 10, Finetune Loss: 0.03308974951505661
+Train Epoch: 23, Iteration: 20, Finetune Loss: 0.03937511146068573
+
+Average validation loss: 0.032783842831850055
+Learning rate: 0.0005
+Train Epoch: 24, Iteration: 0, Finetune Loss: 0.03717762604355812
+Train Epoch: 24, Iteration: 10, Finetune Loss: 0.03133177012205124
+Train Epoch: 24, Iteration: 20, Finetune Loss: 0.03902238607406616
+
+Average validation loss: 0.02991579994559288
+Learning rate: 0.0005
+Train Epoch: 25, Iteration: 0, Finetune Loss: 0.03630929812788963
+Train Epoch: 25, Iteration: 10, Finetune Loss: 0.0385705940425396
+Train Epoch: 25, Iteration: 20, Finetune Loss: 0.03429654240608215
+
+Average validation loss: 0.031188228726387025
+Learning rate: 0.0005
+Train Epoch: 26, Iteration: 0, Finetune Loss: 0.03569289296865463
+Train Epoch: 26, Iteration: 10, Finetune Loss: 0.03334061801433563
+Train Epoch: 26, Iteration: 20, Finetune Loss: 0.029427822679281235
+
+Average validation loss: 0.02822888344526291
+Learning rate: 0.0005
+Train Epoch: 27, Iteration: 0, Finetune Loss: 0.031799715012311935
+Train Epoch: 27, Iteration: 10, Finetune Loss: 0.034821998327970505
+Train Epoch: 27, Iteration: 20, Finetune Loss: 0.03282933309674263
+
+Average validation loss: 0.032827021181583406
+Learning rate: 0.0005
+Train Epoch: 28, Iteration: 0, Finetune Loss: 0.033218808472156525
+Train Epoch: 28, Iteration: 10, Finetune Loss: 0.03260793536901474
+Train Epoch: 28, Iteration: 20, Finetune Loss: 0.03530016541481018
+
+Average validation loss: 0.03373321816325188
+Learning rate: 0.0005
+Train Epoch: 29, Iteration: 0, Finetune Loss: 0.03804316371679306
+Train Epoch: 29, Iteration: 10, Finetune Loss: 0.03518221154808998
+Train Epoch: 29, Iteration: 20, Finetune Loss: 0.03684573993086815
+
+Average validation loss: 0.0288941852748394
+Learning rate: 0.0005
+Train Epoch: 30, Iteration: 0, Finetune Loss: 0.03110501542687416
+Train Epoch: 30, Iteration: 10, Finetune Loss: 0.03326454758644104
+Train Epoch: 30, Iteration: 20, Finetune Loss: 0.03818844258785248
+
+Average validation loss: 0.02994847558438778
+Learning rate: 0.0005
+Train Epoch: 31, Iteration: 0, Finetune Loss: 0.029559021815657616
+Train Epoch: 31, Iteration: 10, Finetune Loss: 0.03527209907770157
+Train Epoch: 31, Iteration: 20, Finetune Loss: 0.036856263875961304
+
+Average validation loss: 0.029690099135041236
+Learning rate: 0.0005
+Train Epoch: 32, Iteration: 0, Finetune Loss: 0.029003232717514038
+Train Epoch: 32, Iteration: 10, Finetune Loss: 0.03498890623450279
+Train Epoch: 32, Iteration: 20, Finetune Loss: 0.030227521434426308
+
+Average validation loss: 0.029566187784075736
+Learning rate: 0.0005
+Train Epoch: 33, Iteration: 0, Finetune Loss: 0.03431228548288345
+Train Epoch: 33, Iteration: 10, Finetune Loss: 0.03222845122218132
+Train Epoch: 33, Iteration: 20, Finetune Loss: 0.028961647301912308
+
+Average validation loss: 0.028160633519291878
+Learning rate: 0.0005
+Train Epoch: 34, Iteration: 0, Finetune Loss: 0.03374297544360161
+Train Epoch: 34, Iteration: 10, Finetune Loss: 0.032160259783267975
+Train Epoch: 34, Iteration: 20, Finetune Loss: 0.02837468683719635
+
+Average validation loss: 0.027805691212415697
+Learning rate: 0.0005
+Train Epoch: 35, Iteration: 0, Finetune Loss: 0.03215041384100914
+Train Epoch: 35, Iteration: 10, Finetune Loss: 0.034687042236328125
+Train Epoch: 35, Iteration: 20, Finetune Loss: 0.03389180451631546
+
+Average validation loss: 0.029217232763767243
+Learning rate: 0.0005
+Train Epoch: 36, Iteration: 0, Finetune Loss: 0.031456682831048965
+Train Epoch: 36, Iteration: 10, Finetune Loss: 0.041401803493499756
+Train Epoch: 36, Iteration: 20, Finetune Loss: 0.03144674003124237
+
+Average validation loss: 0.02856822721660137
+Learning rate: 0.0005
+Train Epoch: 37, Iteration: 0, Finetune Loss: 0.029155688360333443
+Train Epoch: 37, Iteration: 10, Finetune Loss: 0.0318770594894886
+Train Epoch: 37, Iteration: 20, Finetune Loss: 0.03215301036834717
+
+Average validation loss: 0.033587056398391726
+Learning rate: 0.0005
+Train Epoch: 38, Iteration: 0, Finetune Loss: 0.038731157779693604
+Train Epoch: 38, Iteration: 10, Finetune Loss: 0.03629238158464432
+Train Epoch: 38, Iteration: 20, Finetune Loss: 0.04367430880665779
+
+Average validation loss: 0.032243114337325095
+Learning rate: 0.0005
+Train Epoch: 39, Iteration: 0, Finetune Loss: 0.027696525678038597
+Train Epoch: 39, Iteration: 10, Finetune Loss: 0.040370646864175797
+Train Epoch: 39, Iteration: 20, Finetune Loss: 0.033734031021595
+
+Average validation loss: 0.03200009912252426
+Learning rate: 0.00025
+Train Epoch: 40, Iteration: 0, Finetune Loss: 0.037682823836803436
+Train Epoch: 40, Iteration: 10, Finetune Loss: 0.03311750292778015
+Train Epoch: 40, Iteration: 20, Finetune Loss: 0.030760513618588448
+
+Average validation loss: 0.030517200753092767
+Learning rate: 0.00025
+Train Epoch: 41, Iteration: 0, Finetune Loss: 0.029822805896401405
+Train Epoch: 41, Iteration: 10, Finetune Loss: 0.03238392248749733
+Train Epoch: 41, Iteration: 20, Finetune Loss: 0.02947843261063099
+
+Average validation loss: 0.027974170818924903
+Learning rate: 0.00025
+Train Epoch: 42, Iteration: 0, Finetune Loss: 0.028866669163107872
+Train Epoch: 42, Iteration: 10, Finetune Loss: 0.02891116589307785
+Train Epoch: 42, Iteration: 20, Finetune Loss: 0.027105383574962616
+
+Average validation loss: 0.026419171318411826
+Learning rate: 0.00025
+Train Epoch: 43, Iteration: 0, Finetune Loss: 0.02962503209710121
+Train Epoch: 43, Iteration: 10, Finetune Loss: 0.03251544013619423
+Train Epoch: 43, Iteration: 20, Finetune Loss: 0.03315609693527222
+
+Average validation loss: 0.02755807265639305
+Learning rate: 0.00025
+Train Epoch: 44, Iteration: 0, Finetune Loss: 0.02605108916759491
+Train Epoch: 44, Iteration: 10, Finetune Loss: 0.026539238169789314
+Train Epoch: 44, Iteration: 20, Finetune Loss: 0.03226335719227791
+
+Average validation loss: 0.028726372867822647
+Learning rate: 0.00025
+Train Epoch: 45, Iteration: 0, Finetune Loss: 0.02685115672647953
+Train Epoch: 45, Iteration: 10, Finetune Loss: 0.02689151093363762
+Train Epoch: 45, Iteration: 20, Finetune Loss: 0.027598243206739426
+
+Average validation loss: 0.026763055846095084
+Learning rate: 0.00025
+Train Epoch: 46, Iteration: 0, Finetune Loss: 0.032067663967609406
+Train Epoch: 46, Iteration: 10, Finetune Loss: 0.026893172413110733
+Train Epoch: 46, Iteration: 20, Finetune Loss: 0.034235741943120956
+
+Average validation loss: 0.023748017102479934
+Learning rate: 0.00025
+Train Epoch: 47, Iteration: 0, Finetune Loss: 0.03489294648170471
+Train Epoch: 47, Iteration: 10, Finetune Loss: 0.028382958844304085
+Train Epoch: 47, Iteration: 20, Finetune Loss: 0.033125512301921844
+
+Average validation loss: 0.026057665050029755
+Learning rate: 0.00025
+Train Epoch: 48, Iteration: 0, Finetune Loss: 0.031149378046393394
+Train Epoch: 48, Iteration: 10, Finetune Loss: 0.036160506308078766
+Train Epoch: 48, Iteration: 20, Finetune Loss: 0.026626069098711014
+
+Average validation loss: 0.027574051544070242
+Learning rate: 0.00025
+Train Epoch: 49, Iteration: 0, Finetune Loss: 0.031636469066143036
+Train Epoch: 49, Iteration: 10, Finetune Loss: 0.026428787037730217
+Train Epoch: 49, Iteration: 20, Finetune Loss: 0.03331679478287697
+
+Average validation loss: 0.025314462929964067
+Learning rate: 0.00025
+Train Epoch: 50, Iteration: 0, Finetune Loss: 0.02682635933160782
+Train Epoch: 50, Iteration: 10, Finetune Loss: 0.031028324738144875
+Train Epoch: 50, Iteration: 20, Finetune Loss: 0.027559760957956314
+
+Average validation loss: 0.02590109184384346
+[1;34mwandb[0m: 🚀 View run [33mexalted-sunset-44[0m at: [34mhttps://wandb.ai/mpham22-aalborg-university/DL_miniproject/runs/vik739ke[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20241027_140820-vik739ke/logs[0m
