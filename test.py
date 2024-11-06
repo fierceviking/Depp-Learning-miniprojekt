@@ -36,7 +36,7 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Load model
-    weights = "models/FineTuning/Job_8/FineTuning_8_50.pt"
+    weights = "models/FineTuning/Job_9/FineTuning_9_80.pt"
     model = RetinexNet().to(device)
     model.load_state_dict(torch.load(weights, map_location=device))
     model.eval()
@@ -71,7 +71,7 @@ def main():
     print(f'Mean PSNR: {round(mean_psnr, 2)}')
     print(f'Mean SSIM: {round(mean_ssim, 2)}')
 
-    with open('results.txt_6', 'w') as f:
+    with open('Results/job_9 results/results.txt_80', 'w') as f:
         f.write(f"Used weights: {weights}\n")
         f.write(f"Mean PSNR on test set: {round(mean_psnr,2)}\n")
         f.write(f"Mean SSIM on test set: {round(mean_ssim,2)}")

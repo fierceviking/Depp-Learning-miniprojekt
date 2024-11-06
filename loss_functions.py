@@ -21,7 +21,8 @@ def gradient(input_tensor, direction):
 def ave_gradient(input_tensor, direction):
     # Compute the gradient in the specified direction
     gradient_output = gradient(input_tensor, direction)
-    # Apply average pooling (equivalent to TensorFlow's average_pooling2d)
+    
+    # Apply average pooling
     return F.avg_pool2d(gradient_output, kernel_size=3, stride=1, padding=1)
 
 def smooth(I, R):
