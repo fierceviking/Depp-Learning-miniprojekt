@@ -143,7 +143,7 @@ def main():
     wandb.init(project="DL_miniproject")
 
     train_transform = transforms.Compose([
-        transforms.Resize((256, 256)),  # Resize to the same size
+        # transforms.Resize((256, 256)),  # Resize to the same size
         transforms.ToTensor(), # Convert to PyTorch tensor
         transforms.RandomHorizontalFlip(),
         transforms.RandomVerticalFlip(),
@@ -151,7 +151,7 @@ def main():
     ])
 
     vali_transform = transforms.Compose([
-        transforms.Resize((256, 256)),
+        # transforms.Resize((256, 256)),
         transforms.ToTensor(),
         # transforms.Normalize((0, 0, 0), (1, 1, 1))
     ])
