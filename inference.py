@@ -42,17 +42,16 @@ def main():
     # Save the enhanced image
     # cv2.imwrite("22_LLIE.png", cv2.cvtColor(enhanced_image, cv2.COLOR_RGB2BGR))
 
-
-    # Display the enhanced image
-    cv2.imshow("Enhanced Image", image)
-    cv2.waitKey(0)  # Wait for a key press to close the window
-    cv2.destroyAllWindows()
-
     # Original image: Save original image
     image = image.squeeze(0).permute(1,2,0)
     image = np.clip(image.cpu().numpy(), 0, 1)
     image = (image * 255).astype('uint8')
     cv2.imwrite("22_original_high.png", cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+
+        # Display the enhanced image
+    cv2.imshow("Enhanced Image", image)
+    cv2.waitKey(0)  # Wait for a key press to close the window
+    cv2.destroyAllWindows()
     
 
 if __name__ == '__main__':
