@@ -27,7 +27,7 @@ def main():
     model.eval()
 
     # Load image
-    image_path = 'data/test_data/low/22.png'
+    image_path = 'data/test_data/high/22.png'
     image = load_image(image_path).to(device)
 
     # Run inference
@@ -40,7 +40,7 @@ def main():
     enhanced_image = (enhanced_image * 255).astype('uint8')  # Convert to uint8 format
 
     # Save the enhanced image
-    cv2.imwrite("22_LLIE.png", cv2.cvtColor(enhanced_image, cv2.COLOR_RGB2BGR))
+    # cv2.imwrite("22_LLIE.png", cv2.cvtColor(enhanced_image, cv2.COLOR_RGB2BGR))
 
 
     # Display the enhanced image
@@ -49,10 +49,10 @@ def main():
     cv2.destroyAllWindows()
 
     # Original image: Save original image
-    # image = image.squeeze(0).permute(1,2,0)
-    # image = np.clip(image.cpu().numpy(), 0, 1)
-    # image = (image * 255).astype('uint8')
-    # cv2.imwrite("22_original.png", cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+    image = image.squeeze(0).permute(1,2,0)
+    image = np.clip(image.cpu().numpy(), 0, 1)
+    image = (image * 255).astype('uint8')
+    cv2.imwrite("22_original_high.png", cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
     
 
 if __name__ == '__main__':
