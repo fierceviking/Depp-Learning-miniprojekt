@@ -13,3 +13,5 @@ print("Params: ", params)
 
 summary(model, rand_input)
 
+#Macs:  48942022656.0
+#Params:  555205.0
