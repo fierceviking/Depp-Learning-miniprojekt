@@ -120,7 +120,7 @@ def main():
     #stage = 'finetune'
 
     # Specify num test
-    num_test = 8 # Only used for file-naming
+    num_test = 10 # Only used for file-naming
 
 
     # Create directory if it doesn't exist
@@ -207,7 +207,7 @@ def main():
         wandb.log({'Learning_rate': current_lr})
         schedulers[stage].step()
         
-        if epoch % 10 == 0: # Changed from 20 to 10 since finetuning only gets 50 epochs.
+        if epoch % 20 == 0: # Changed from 20 to 10 since finetuning only gets 50 epochs.
             if stage == 'decom':
                 torch.save(model.decom_net.state_dict(), f'models/DecomNet/Job_{num_test}/DecomNet_trained_{num_test}_{epoch}.pt')
             elif stage == 'enhance':
