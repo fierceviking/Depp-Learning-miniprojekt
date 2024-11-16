@@ -1,8 +1,0 @@
-wandb: Using wandb-core as the SDK backend. Please refer to https://wandb.me/wandb-core for more information.
-wandb: Currently logged in as: mpham22 (mpham22-aalborg-university). Use `wandb login --relogin` to force relogin
-wandb: Tracking run with wandb version 0.18.5
-wandb: Run data is saved locally in /ceph/home/student.aau.dk/le20fp/deep_learning/mini_project/wandb/run-20241027_104242-28akvcad
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run zesty-flower-36
-wandb: ⭐️ View project at https://wandb.ai/mpham22-aalborg-university/DL_miniproject
-wandb: 🚀 View run at https://wandb.ai/mpham22-aalborg-university/DL_miniproject/runs/28akvcad

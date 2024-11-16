@@ -19,7 +19,7 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Load model
-    path = "models/FineTuning/Job_9/FineTuning_9_90.pt"
+    path = "snapshots/FineTuning/Job_8/FineTuning_8_50.pt"
     model = RetinexNet().to(device)
 
     # Load the model state_dict with map_location
@@ -46,10 +46,10 @@ def main():
     image = image.squeeze(0).permute(1,2,0)
     image = np.clip(image.cpu().numpy(), 0, 1)
     image = (image * 255).astype('uint8')
-    cv2.imwrite("22_original_high.png", cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+    # cv2.imwrite("22_original_high.png", cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
 
         # Display the enhanced image
-    cv2.imshow("Enhanced Image", image)
+    cv2.imshow("Enhanced Image", enhanced_image)
     cv2.waitKey(0)  # Wait for a key press to close the window
     cv2.destroyAllWindows()
     
