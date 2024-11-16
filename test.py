@@ -36,7 +36,7 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Load model
-    weights = "snapshots/FineTuning/Job_8/FineTuning_8_40.pt"
+    weights = "snapshots/FineTuning/Job_8/FineTuning_8_50.pt"
     model = RetinexNet().to(device)
     model.load_state_dict(torch.load(weights, map_location=device))
     model.eval()

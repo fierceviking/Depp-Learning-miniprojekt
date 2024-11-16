@@ -120,7 +120,7 @@ def main():
     #stage = 'finetune'
 
     # Specify num test
-    num_test = 10 # Only used for file-naming
+    num_test = 8 # Only used for file-naming
 
 
     # Create directory if it doesn't exist
