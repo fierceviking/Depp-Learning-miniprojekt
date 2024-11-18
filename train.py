@@ -143,17 +143,13 @@ def main():
     wandb.init(project="DL_miniproject")
 
     train_transform = transforms.Compose([
-        # transforms.Resize((256, 256)),  # Resize to the same size
         transforms.ToTensor(), # Convert to PyTorch tensor
         transforms.RandomHorizontalFlip(),
         transforms.RandomVerticalFlip(),
-        # transforms.Normalize((0, 0, 0), (1, 1, 1))  # This actually does nothing, apperently
     ])
 
     vali_transform = transforms.Compose([
-        # transforms.Resize((256, 256)),
         transforms.ToTensor(),
-        # transforms.Normalize((0, 0, 0), (1, 1, 1))
     ])
 
     # Define training and validation set
@@ -207,7 +203,7 @@ def main():
         wandb.log({'Learning_rate': current_lr})
         schedulers[stage].step()
         
-        if epoch % 10 == 0: # Changed from 20 to 10 since finetuning only gets 50 epochs.
+        if epoch % 20 == 0: # Changed from 20 to 10 since finetuning only gets 50 epochs.
             if stage == 'decom':
                 torch.save(model.decom_net.state_dict(), f'models/DecomNet/Job_{num_test}/DecomNet_trained_{num_test}_{epoch}.pt')
             elif stage == 'enhance':
