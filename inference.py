@@ -22,7 +22,7 @@ def main():
     model.load_state_dict(torch.load(path, map_location=device))
     model.eval()
 
-    image_path = 'data/test_data/high/22.png'
+    image_path = '179.png'
     image = load_image(image_path).to(device)
 
     # Inference
@@ -43,7 +43,7 @@ def main():
     image = (image * 255).astype('uint8')
 
     # Save image
-    cv2.imwrite("22_original_high.png", cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+    # cv2.imwrite("22_original_high.png", cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
 
     # Display the enhanced image
     cv2.imshow("Enhanced Image", enhanced_image)
