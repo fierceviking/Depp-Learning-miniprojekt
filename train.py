@@ -22,15 +22,14 @@ def train_models(model, device, train_loader, optimizer, epoch, stage):
     for batch_idx, (low_light, high_light) in enumerate(train_loader):
         low_light, high_light = low_light.to(device), high_light.to(device)
 
-        # Zero out gradients
         optimizer.zero_grad()
 
+        # Specify training stages
         if stage == 'decom':
             # Forward pass: Decomposing the images
             R_low, I_low = model(low_light)
             R_high, I_high = model(high_light)
 
-            # Compute loss
             loss = compute_decom_loss(low_light, high_light, 
                                             R_low, I_low, 
                                             R_high, I_high)
@@ -41,7 +40,6 @@ def train_models(model, device, train_loader, optimizer, epoch, stage):
             loss = compute_enhance_loss(high_light, R_low, I_low_enhanced)
 
         elif stage == 'finetune':
-            # Fine tuning
             # Forward pass: Decomposing and enhancing the low-light image
             enhanced_image, R_low, I_low, I_low_enhanced = model(low_light)
             R_high, I_high = model.decom_net(high_light)
@@ -52,7 +50,7 @@ def train_models(model, device, train_loader, optimizer, epoch, stage):
                                             R_high, I_high)
 
             weight = 0.1
-            loss = decom_loss + weight*enhance_loss
+            loss = decom_loss + (weight*enhance_loss)
         
         loss.backward()
         optimizer.step()
@@ -76,7 +74,6 @@ def validate(model, device, vali_loader, stage='finetune'):
                 R_low, I_low = model.decom_net(low_light)
                 R_high, I_high = model.decom_net(high_light)
 
-                # Compute losses
                 decom_loss = compute_decom_loss(low_light, high_light, R_low, I_low, R_high, I_high)
                 val_loss += decom_loss.item()
 
@@ -87,7 +84,6 @@ def validate(model, device, vali_loader, stage='finetune'):
                 # Decompose the high-light image as well (for comparison)
                 R_high, I_high = model.decom_net(high_light)
 
-                # Compute enhance loss
                 enhance_loss = compute_enhance_loss(high_light, R_low, I_low_enhanced)
                 val_loss += enhance_loss.item()
 
@@ -98,13 +94,11 @@ def validate(model, device, vali_loader, stage='finetune'):
                 # Decompose the high-light image as well (for comparison)
                 R_high, I_high = model.decom_net(high_light)
 
-                # Compute both losses
                 decom_loss = compute_decom_loss(low_light, high_light, R_low, I_low, R_high, I_high)
                 enhance_loss = compute_enhance_loss(high_light, R_low, I_low_enhanced)
 
-
                 weight = 0.1
-                loss = decom_loss + weight*enhance_loss
+                loss = decom_loss + (weight*enhance_loss)
                 val_loss += loss.item()
         
         avg_val_loss = val_loss / len(vali_loader)
@@ -114,6 +108,7 @@ def validate(model, device, vali_loader, stage='finetune'):
 
 def main():
     torch.manual_seed(42)
+
     # Specify stages
     stage = 'decom'
     #stage = 'enhance'
@@ -123,10 +118,10 @@ def main():
     num_test = 8 # Only used for file-naming
 
 
-    # Create directory if it doesn't exist
-    os.makedirs(f"models/DecomNet/Job_{num_test}", exist_ok=True)
-    os.makedirs(f"models/EnhanceNet/Job_{num_test}", exist_ok=True)
-    os.makedirs(f"models/FineTuning/Job_{num_test}", exist_ok=True)
+    # Create directory if it doesn't exist (for snapshots)
+    os.makedirs(f"snapshots/DecomNet/Job_{num_test}", exist_ok=True)
+    os.makedirs(f"snapshots/EnhanceNet/Job_{num_test}", exist_ok=True)
+    os.makedirs(f"snapshots/FineTuning/Job_{num_test}", exist_ok=True)
 
     num_epochs = 100
     batch_size = 16
@@ -143,21 +138,23 @@ def main():
     wandb.init(project="DL_miniproject")
 
     train_transform = transforms.Compose([
-        transforms.ToTensor(), # Convert to PyTorch tensor
+        transforms.ToTensor(),
         transforms.RandomHorizontalFlip(),
         transforms.RandomVerticalFlip(),
     ])
 
     vali_transform = transforms.Compose([
-        transforms.ToTensor(),
+        transforms.ToTensor()
     ])
 
-    # Define training and validation set
+    # Define training and validation path
     train_low_dir = 'data/train_data/low'
     train_high_dir = 'data/train_data/high'
 
     vali_low_dir = 'data/vali_data/low'
     vali_high_dir = 'data/vali_data/high'
+
+
     patch_size = (96,96)
 
     train_data = LOLDataset(train_low_dir, train_high_dir, transform=train_transform, patch_size=patch_size)
@@ -172,12 +169,12 @@ def main():
 
     elif stage == 'enhance':
         model = RetinexNet(train_decom_only=False, train_enhance_only=True).to(device)
-        model.decom_net.load_state_dict(torch.load(f'models/DecomNet/Job_{num_test}/DecomNet_trained_{num_test}_{num_epochs}.pt')) 
+        model.decom_net.load_state_dict(torch.load(f'snapshots/DecomNet/Job_{num_test}/DecomNet_trained_{num_test}_{num_epochs}.pt')) 
         
     elif stage == 'finetune':
         model = RetinexNet(train_decom_only=False, train_enhance_only=False).to(device)
-        model.decom_net.load_state_dict(torch.load(f'models/DecomNet/Job_{num_test}/DecomNet_trained_{num_test}_{num_epochs}.pt')) 
-        model.enhance_net.load_state_dict(torch.load(f'models/EnhanceNet/Job_{num_test}/EnhanceNet_trained_{num_test}_{num_epochs}.pt'))
+        model.decom_net.load_state_dict(torch.load(f'snapshots/DecomNet/Job_{num_test}/DecomNet_trained_{num_test}_{num_epochs}.pt')) 
+        model.enhance_net.load_state_dict(torch.load(f'snapshots/EnhanceNet/Job_{num_test}/EnhanceNet_trained_{num_test}_{num_epochs}.pt'))
 
     # Define optimizers and schedulers
     optimizers = {
@@ -203,13 +200,13 @@ def main():
         wandb.log({'Learning_rate': current_lr})
         schedulers[stage].step()
         
-        if epoch % 20 == 0: # Changed from 20 to 10 since finetuning only gets 50 epochs.
+        if epoch % 10 == 0: # Changed from 20 to 10 since finetuning only gets 50 epochs.
             if stage == 'decom':
-                torch.save(model.decom_net.state_dict(), f'models/DecomNet/Job_{num_test}/DecomNet_trained_{num_test}_{epoch}.pt')
+                torch.save(model.decom_net.state_dict(), f'snapshots/DecomNet/Job_{num_test}/DecomNet_trained_{num_test}_{epoch}.pt')
             elif stage == 'enhance':
-                torch.save(model.enhance_net.state_dict(), f'models/EnhanceNet/Job_{num_test}/EnhanceNet_trained_{num_test}_{epoch}.pt')
+                torch.save(model.enhance_net.state_dict(), f'snapshots/EnhanceNet/Job_{num_test}/EnhanceNet_trained_{num_test}_{epoch}.pt')
             elif stage == 'finetune':
-                torch.save(model.state_dict(), f'models/FineTuning/Job_{num_test}/FineTuning_{num_test}_{epoch}.pt')
+                torch.save(model.state_dict(), f'snapshots/FineTuning/Job_{num_test}/FineTuning_{num_test}_{epoch}.pt')
 
    
 if __name__ == '__main__':
